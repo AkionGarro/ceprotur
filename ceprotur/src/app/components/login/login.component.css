@@ -1,0 +1,78 @@
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+  overflow: hidden;
+  height: 100vh;
+  background: url("../../../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login {
+  overflow: hidden;
+  text-align: center;
+  max-width: 25rem;
+  height: 30rem;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.logo {
+  margin: 1rem auto;
+  width: 40%;
+  align-items: flex-start;
+}
+.inputs {
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+}
+.inputs label {
+  font-weight: 500;
+}
+.inputs input {
+  width: 80%;
+  height: 2rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+.inputs input:focus {
+  border-bottom: 1px solid #000;
+}
+.inputs input::placeholder {
+  color: #ccc;
+  text-align: center;
+}
+
+.labels {
+  display: block;
+}
+
+.btnRegister {
+  margin: 1rem auto;
+  width: 60%;
+  height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(170, 51, 45, 0.938);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btnLogin {
+  margin: 1rem auto;
+  width: 60%;
+  height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(1, 10, 82, 0.89);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
