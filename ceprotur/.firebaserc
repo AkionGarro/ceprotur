@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ceprotur"
+  },
+  "targets": {
+    "ceprotur": {
+      "hosting": {
+        "ceprotur": [
+          "ceprotur"
+        ]
+      }
+    }
   }
 }

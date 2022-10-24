@@ -1,89 +1,114 @@
 <div class="flex-center-center home">
-  <div class="login">
-    <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="login">
+      <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
+      <div class="d-flex">
+        <div class="inputs">
+          <label class="labels"> Nombre</label>
+          <input
+            #nameImput
+            type="text"
+            formControlName="nameImput"
+            placeholder="Ingrese su nombre completo"
+          />
+        </div>
 
-    <div class="d-flex">
-      <div class="inputs">
-        <label class="labels"> Nombre</label>
-        <input
-          #nameImput
-          type="text"
-          placeholder="Ingrese su nombre completo"
-        />
+        <div class="inputs">
+          <label class="labels"> Correo</label>
+          <input
+            #emailImput
+            formControlName="emailImput"
+            type="email"
+            placeholder="Ingrese su correo"
+          />
+        </div>
       </div>
 
-      <div class="inputs">
-        <label class="labels"> Correo</label>
-        <input #emailImput type="email" placeholder="Ingrese su correo" />
+      <div class="d-flex">
+        <div class="inputs">
+          <label class="labels"> Usuario</label>
+          <input
+            #usuarioImput
+            formControlName="usuarioImput"
+            type="text"
+            placeholder="Ingrese su usuario"
+          />
+        </div>
+
+        <div class="inputs">
+          <label class="labels"> Contraseña</label>
+          <input
+            #contraImput
+            type="password"
+            formControlName="contraImput"
+            placeholder="Ingrese su contraseña"
+          />
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <select
+          class="form-select"
+          #selectImput
+          formControlName="tipoUserImput"
+        >
+          <option selected disabled>Tipo de usuario</option>
+          <option *ngFor="let tipo of tipoUser">
+            {{ tipo.nombre }}
+          </option>
+        </select>
+        <div class="inputs">
+          <label class="labels"> Ubicacion</label>
+          <input
+            formControlName="ubicacionImput"
+            #ubicacionImput
+            type="text"
+            placeholder="Ingrese su dirrección"
+          />
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <div class="inputs">
+          <label class="labels"> Telefono</label>
+          <input
+            #telImput
+            formControlName="telImput"
+            type="tel"
+            placeholder="Ingrese su telefono"
+          />
+        </div>
+        <div class="inputs">
+          <label class="labels"> Sector Turistico</label>
+          <input
+            #sectorImput
+            formControlName="sectorImput"
+            type="tel"
+            placeholder="Sector Turistico que desempeña "
+          />
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="submit"
+          class="btnRegister"
+          (click)="
+            register(
+              nameImput.value,
+              emailImput.value,
+              usuarioImput.value,
+              contraImput.value,
+              selectImput.value,
+              ubicacionImput.value,
+              telImput.value,
+              sectorImput.value
+            )
+          "
+        >
+          Registrarse
+        </button>
       </div>
     </div>
-
-    <div class="d-flex">
-      <div class="inputs">
-        <label class="labels"> Usuario</label>
-        <input #usuarioImput type="text" placeholder="Ingrese su usuario" />
-      </div>
-
-      <div class="inputs">
-        <label class="labels"> Contraseña</label>
-        <input
-          #contraImput
-          type="password"
-          placeholder="Ingrese su contraseña"
-        />
-      </div>
-    </div>
-
-    <div class="d-flex">
-      <select class="form-select" #selectImput>
-        <option selected disabled>Tipo de usuario</option>
-        <option *ngFor="let tipo of tipoUser">
-          {{ tipo.nombre }}
-        </option>
-      </select>
-      <div class="inputs">
-        <label class="labels"> Ubicacion</label>
-        <input
-          #ubicacionImput
-          type="text"
-          placeholder="Ingrese su dirrección"
-        />
-      </div>
-    </div>
-
-    <div class="d-flex">
-      <div class="inputs">
-        <label class="labels"> Telefono</label>
-        <input #telImput type="tel" placeholder="Ingrese su telefono" />
-      </div>
-      <div class="inputs">
-        <label class="labels"> Sector Turistico</label>
-        <input
-          #sectorImput
-          type="tel"
-          placeholder="Sector Turistico que desempeña "
-        />
-      </div>
-    </div>
-
-    <div>
-      <button
-        class="btnRegister"
-        (click)="
-          register(
-            nameImput.value,
-            emailImput.value,
-            usuarioImput.value,
-            contraImput.value,
-            selectImput.value,
-            ubicacionImput.value,
-            telImput.value,
-            sectorImput.value
-          )
-        "
-      >
-        Registrarse
-      </button>
-    </div>
-  </div>
+  </form>
 </div>

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,8 +18,19 @@ export class RegisterComponent implements OnInit {
     { nombre: 'Grupo Organizado' },
     { nombre: 'Profesional de Turismo' },
   ];
-
-  constructor(private router: Router) {}
+  formulario: FormGroup;
+  constructor(private router: Router) {
+    this.formulario = new FormGroup({
+      nameImput: new FormControl(),
+      emailImput: new FormControl(),
+      usuarioImput: new FormControl(),
+      contraImput: new FormControl(),
+      tipoUserImput: new FormControl(),
+      ubicacionImput: new FormControl(),
+      telImput: new FormControl(),
+      sectorImput: new FormControl(),
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -29,18 +46,12 @@ export class RegisterComponent implements OnInit {
     direccion: String,
     telefono: String,
     sector: String
-  ) {
-    console.log('Nombre: ' + name);
-    console.log('Email: ' + email);
-    console.log('Usuario: ' + usuario);
-    console.log('Password: ' + password);
-    console.log('Tipo de Usuario: ' + tipoUser);
-    console.log('Direccion: ' + direccion);
-    console.log('Telefono: ' + telefono);
-    console.log('Sector: ' + sector);
-  }
+  ) {}
 
   goLogin() {
     this.router.navigate(['/login']);
+  }
+  onSubmit() {
+    console.log(this.formulario.value);
   }
 }
