@@ -5,29 +5,37 @@
     <div class="d-flex">
       <div class="inputs">
         <label class="labels"> Nombre</label>
-        <input type="text" placeholder="Ingrese su nombre completo" />
+        <input
+          #nameImput
+          type="text"
+          placeholder="Ingrese su nombre completo"
+        />
       </div>
 
       <div class="inputs">
         <label class="labels"> Correo</label>
-        <input type="email" placeholder="Ingrese su correo" />
+        <input #emailImput type="email" placeholder="Ingrese su correo" />
       </div>
     </div>
 
     <div class="d-flex">
       <div class="inputs">
         <label class="labels"> Usuario</label>
-        <input type="text" placeholder="Ingrese su usuario" />
+        <input #usuarioImput type="text" placeholder="Ingrese su usuario" />
       </div>
 
       <div class="inputs">
         <label class="labels"> Contraseña</label>
-        <input type="password" placeholder="Ingrese su contraseña" />
+        <input
+          #contraImput
+          type="password"
+          placeholder="Ingrese su contraseña"
+        />
       </div>
     </div>
 
     <div class="d-flex">
-      <select class="form-select">
+      <select class="form-select" #selectImput>
         <option selected disabled>Tipo de usuario</option>
         <option *ngFor="let tipo of tipoUser">
           {{ tipo.nombre }}
@@ -35,23 +43,47 @@
       </select>
       <div class="inputs">
         <label class="labels"> Ubicacion</label>
-        <input type="text" placeholder="Ingrese su dirrección" />
+        <input
+          #ubicacionImput
+          type="text"
+          placeholder="Ingrese su dirrección"
+        />
       </div>
     </div>
 
     <div class="d-flex">
       <div class="inputs">
         <label class="labels"> Telefono</label>
-        <input type="tel" placeholder="Ingrese su telefono" />
+        <input #telImput type="tel" placeholder="Ingrese su telefono" />
       </div>
       <div class="inputs">
         <label class="labels"> Sector Turistico</label>
-        <input type="tel" placeholder="Sector Turistico que desempeña " />
+        <input
+          #sectorImput
+          type="tel"
+          placeholder="Sector Turistico que desempeña "
+        />
       </div>
     </div>
 
     <div>
-      <button class="btnRegister" (click)="goLogin()">Registrarse</button>
+      <button
+        class="btnRegister"
+        (click)="
+          register(
+            nameImput.value,
+            emailImput.value,
+            usuarioImput.value,
+            contraImput.value,
+            selectImput.value,
+            ubicacionImput.value,
+            telImput.value,
+            sectorImput.value
+          )
+        "
+      >
+        Registrarse
+      </button>
     </div>
   </div>
 </div>
