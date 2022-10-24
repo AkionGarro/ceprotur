@@ -1,0 +1,57 @@
+<div class="flex-center-center home">
+  <div class="login">
+    <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
+
+    <div class="d-flex">
+      <div class="inputs">
+        <label class="labels"> Nombre</label>
+        <input type="text" placeholder="Ingrese su nombre completo" />
+      </div>
+
+      <div class="inputs">
+        <label class="labels"> Correo</label>
+        <input type="email" placeholder="Ingrese su correo" />
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="inputs">
+        <label class="labels"> Usuario</label>
+        <input type="text" placeholder="Ingrese su usuario" />
+      </div>
+
+      <div class="inputs">
+        <label class="labels"> Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña" />
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <select class="form-select">
+        <option selected disabled>Tipo de usuario</option>
+        <option *ngFor="let tipo of tipoUser">
+          {{ tipo.nombre }}
+        </option>
+      </select>
+      <div class="inputs">
+        <label class="labels"> Ubicacion</label>
+        <input type="text" placeholder="Ingrese su dirrección" />
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="inputs">
+        <label class="labels"> Telefono</label>
+        <input type="tel" placeholder="Ingrese su telefono" />
+      </div>
+      <div class="inputs">
+        <label class="labels"> Sector Turistico</label>
+        <input type="tel" placeholder="Sector Turistico que desempeña " />
+      </div>
+    </div>
+
+    <div>
+      <button class="btnRegister" (click)="goLogin()">Registrarse</button>
+    </div>
+  </div>
+</div>

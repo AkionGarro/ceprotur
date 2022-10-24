@@ -6,8 +6,8 @@
 
 .home {
   overflow: hidden;
+  background-image: url("../../../assets/bg5.jpg");
   height: 100vh;
-  background: url("../../../assets/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
   text-align: center;
   max-width: 25rem;
   height: 30rem;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.781);
   border-radius: 2rem;
 }
 
@@ -39,8 +39,11 @@
   height: 2rem;
   border: none;
   border-bottom: 1px solid #ccc;
+  border-radius: 1.5rem;
   outline: none;
   font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.555);
 }
 .inputs input:focus {
   border-bottom: 1px solid #000;
