@@ -6,7 +6,6 @@
         <div class="inputs">
           <label class="labels"> Nombre</label>
           <input
-            #nameImput
             type="text"
             formControlName="nameImput"
             placeholder="Ingrese su nombre completo"
@@ -16,7 +15,6 @@
         <div class="inputs">
           <label class="labels"> Correo</label>
           <input
-            #emailImput
             formControlName="emailImput"
             type="email"
             placeholder="Ingrese su correo"
@@ -28,7 +26,6 @@
         <div class="inputs">
           <label class="labels"> Usuario</label>
           <input
-            #usuarioImput
             formControlName="usuarioImput"
             type="text"
             placeholder="Ingrese su usuario"
@@ -38,7 +35,6 @@
         <div class="inputs">
           <label class="labels"> Contraseña</label>
           <input
-            #contraImput
             type="password"
             formControlName="contraImput"
             placeholder="Ingrese su contraseña"
@@ -47,11 +43,7 @@
       </div>
 
       <div class="d-flex">
-        <select
-          class="form-select"
-          #selectImput
-          formControlName="tipoUserImput"
-        >
+        <select class="form-select" formControlName="tipoUserImput">
           <option selected disabled>Tipo de usuario</option>
           <option *ngFor="let tipo of tipoUser">
             {{ tipo.nombre }}
@@ -61,7 +53,6 @@
           <label class="labels"> Ubicacion</label>
           <input
             formControlName="ubicacionImput"
-            #ubicacionImput
             type="text"
             placeholder="Ingrese su dirrección"
           />
@@ -72,7 +63,6 @@
         <div class="inputs">
           <label class="labels"> Telefono</label>
           <input
-            #telImput
             formControlName="telImput"
             type="tel"
             placeholder="Ingrese su telefono"
@@ -81,7 +71,6 @@
         <div class="inputs">
           <label class="labels"> Sector Turistico</label>
           <input
-            #sectorImput
             formControlName="sectorImput"
             type="tel"
             placeholder="Sector Turistico que desempeña "
@@ -90,24 +79,7 @@
       </div>
 
       <div>
-        <button
-          type="submit"
-          class="btnRegister"
-          (click)="
-            register(
-              nameImput.value,
-              emailImput.value,
-              usuarioImput.value,
-              contraImput.value,
-              selectImput.value,
-              ubicacionImput.value,
-              telImput.value,
-              sectorImput.value
-            )
-          "
-        >
-          Registrarse
-        </button>
+        <button type="submit" class="btnRegister">Registrarse</button>
       </div>
     </div>
   </form>

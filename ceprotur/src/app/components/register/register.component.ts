@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { RegisterService } from 'src/app/services/register.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,7 +15,10 @@ export class RegisterComponent implements OnInit {
     { nombre: 'Profesional de Turismo' },
   ];
   formulario: FormGroup;
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private registerService: RegisterService
+  ) {
     this.formulario = new FormGroup({
       nameImput: new FormControl(),
       emailImput: new FormControl(),
@@ -34,24 +33,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  tryUser(tipoUser: String) {
-    console.log(tipoUser);
-  }
-  register(
-    name: String,
-    email: String,
-    usuario: String,
-    password: String,
-    tipoUser: String,
-    direccion: String,
-    telefono: String,
-    sector: String
-  ) {}
-
   goLogin() {
     this.router.navigate(['/login']);
   }
-  onSubmit() {
+  async onSubmit() {
     console.log(this.formulario.value);
+    const response = await this.registerService.addUser(this.formulario.value);
+    console.log(response);
   }
 }
