@@ -13,4 +13,7 @@ export class LoginComponent implements OnInit {
   goRegister() {
     this.router.navigate(['register']);
   }
+  goIngresar() {
+    this.router.navigate(['users']);
+  }
 }
