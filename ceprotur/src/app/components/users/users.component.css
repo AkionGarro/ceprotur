@@ -1,0 +1,53 @@
+.flex-center-center { /*Posiciona el cuadro blanco en el centro*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home { /*Ajusta el tamaño de la pagina*/
+  overflow: hidden;
+  height: 100vh;
+  background: url("../../../assets/bg3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.users {/*Ajusta detalles del formulario*/
+  overflow: hidden;
+  text-align: center;
+  max-width: 30rem;
+  height: 40rem;
+  background: rgba(255, 255, 255, 0.774);
+  border-radius: 4rem;
+}
+
+.logo {/*Ajusta el tamaño del logo de Ceprotur*/
+  margin: 1rem auto;
+  width: 25%;
+  align-items: flex-start;
+}
+.inputs { /*Ajusta detalles de los apartados que solicitan algo */
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+}
+.inputs label {/*Ajusta el tamaño de la letra de apartado que solicita*/
+  font-weight: 500;
+}
+
+.labels {  /*Ajusta detalles que tiene que ver con por ejemplo, nombre, correo... */
+  display: block;
+
+}
+.btnUsers { /*Ajusta detalles del boton enviar solicitud */
+  margin: 1rem auto;
+  width: 60%;
+  height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(18, 61, 40, 0.89);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+

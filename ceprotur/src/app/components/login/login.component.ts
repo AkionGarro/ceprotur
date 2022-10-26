@@ -34,4 +34,7 @@ export class LoginComponent implements OnInit {
     console.log(this.formulario.value);
   }
 
+  goIngresar() {
+    this.router.navigate(['users']);
+  }
 }

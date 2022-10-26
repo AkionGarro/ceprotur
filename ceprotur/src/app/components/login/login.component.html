@@ -11,17 +11,13 @@
 
       </div>
 
-      <div class="inputs">
-        <label class="labels"> Contraseña</label>
-        <input type="password" formControlName="contraImput" placeholder="Ingrese su contraseña" />
-      </div>
-      <div>
-        <button type="submit" class="btnLogin">Ingresar</button>
-        <button class="btnRegister" (click)="goRegister()">Registrarse</button>
-
-        <button class="provisional" [routerLink]="['../admin']">Admin (provisional)</button>
-      </div>
-
-    </form>
+    <div class="inputs">
+      <label class="labels"> Contraseña</label>
+      <input type="password" placeholder="Ingrese su contraseña" />
+    </div>
+    <div>
+      <button class="btnLogin">Ingresar</button>
+      <button class="btnRegister" (click)="goRegister()">Registrarse</button>
+    </div>
   </div>
 </div>
