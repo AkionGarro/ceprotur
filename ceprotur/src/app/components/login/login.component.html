@@ -7,17 +7,19 @@
       <div class="inputs">
         <label class="labels"> Usuario</label>
         <input type="text" formControlName="usuarioImput" placeholder="Ingrese su nombre de usuario" />
-
-
       </div>
 
-    <div class="inputs">
-      <label class="labels"> Contraseña</label>
-      <input type="password" placeholder="Ingrese su contraseña" />
-    </div>
-    <div>
-      <button class="btnLogin">Ingresar</button>
-      <button class="btnRegister" (click)="goRegister()">Registrarse</button>
-    </div>
+      <div class="inputs">
+        <label class="labels"> Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña" />
+      </div>
+
+      <div>
+        <button class="btnLogin"(click)="goIngresar()">Ingresar</button>
+        <button class="btnRegister" (click)="goRegister()">Registrarse</button>
+        <button class="provisional" [routerLink]="['../admin']">Admin</button>
+      </div>
+
+    </form>
   </div>
 </div>
