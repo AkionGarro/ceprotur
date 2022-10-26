@@ -1,0 +1,11 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.home {
+  overflow: hidden;
+  height: 100vh;
+  background: url("../../../assets/bg9.jpg");
+
+}

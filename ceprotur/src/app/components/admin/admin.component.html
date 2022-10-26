@@ -1,0 +1,31 @@
+<div class="flex-center-center home">
+    <div class="row">
+        <p>
+            <mat-toolbar class="bg-transparent">
+                <button mat-icon-button
+                    [matMenuTriggerFor]="menu">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['./add-admin']">
+                        <mat-icon>person_add</mat-icon>
+                        <span>Añadir administrador</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['../login']">
+                        <mat-icon>logout</mat-icon>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </mat-menu>
+                <span>Administrador</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </mat-toolbar>
+        </p>
+    </div>
+
+</div>

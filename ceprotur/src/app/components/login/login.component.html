@@ -1,18 +1,27 @@
 <div class="flex-center-center home">
   <div class="login">
     <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
-    <div class="inputs">
-      <label class="labels"> Usuario</label>
-      <input type="text" placeholder="Ingrese su nombre de usuario" />
-    </div>
 
-    <div class="inputs">
-      <label class="labels"> Contraseña</label>
-      <input type="password" placeholder="Ingrese su contraseña" />
-    </div>
-    <div>
-      <button class="btnLogin">Ingresar</button>
-      <button class="btnRegister" (click)="goRegister()">Registrarse</button>
-    </div>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+      <div class="inputs">
+        <label class="labels"> Usuario</label>
+        <input type="text" formControlName="usuarioImput" placeholder="Ingrese su nombre de usuario" />
+
+
+      </div>
+
+      <div class="inputs">
+        <label class="labels"> Contraseña</label>
+        <input type="password" formControlName="contraImput" placeholder="Ingrese su contraseña" />
+      </div>
+      <div>
+        <button type="submit" class="btnLogin">Ingresar</button>
+        <button class="btnRegister" (click)="goRegister()">Registrarse</button>
+
+        <button class="provisional" [routerLink]="['../admin']">Admin (provisional)</button>
+      </div>
+
+    </form>
   </div>
 </div>

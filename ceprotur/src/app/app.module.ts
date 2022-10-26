@@ -10,6 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +28,12 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
+    MatIconModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,116 @@
+body {
+    background: url("../../../../assets/bg9.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+.admin-title {
+    opacity: 1;
+}
+
+.add-admin-label {
+    margin-top: 1rem;
+    width: 35%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+
+.right-content-options {
+    text-align: right;
+
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home {
+    overflow: hidden;
+    height: 85vh;
+    /* background: url("../../../assets/bg9.jpg"); */
+
+}
+
+.login {
+    overflow: hidden;
+    text-align: center;
+    width: 35rem;
+    height: 35rem;
+    background: rgba(255, 255, 255, 0.774);
+    border-radius: 2rem;
+}
+
+.logo {
+    margin: 1rem auto;
+    width: 40%;
+    align-items: flex-start;
+}
+
+.inputs {
+    margin: 0.5rem auto;
+    font-size: 1.1rem;
+}
+
+.inputs label {
+    font-weight: 500;
+}
+
+.inputs input {
+    width: 15rem;
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+select {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15rem;
+    height: 2.2rem;
+    text-align: center;
+    border-radius: 1rem;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+}
+
+.inputs input:focus {
+    border-bottom: 1px solid #000;
+}
+
+.inputs input::placeholder {
+    color: rgb(148, 148, 148);
+    text-align: center;
+}
+
+.labels {
+    display: block;
+}
+
+.btnRegister {
+    margin: 2rem auto;
+    width: 40%;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgba(1, 10, 82, 0.89);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}

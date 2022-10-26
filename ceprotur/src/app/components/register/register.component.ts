@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
+import { Admin } from 'src/app/models/admin';
 
 @Component({
   selector: 'app-register',
