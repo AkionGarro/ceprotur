@@ -2,24 +2,36 @@
   <div class="login">
     <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
 
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-
+    <form [formGroup]="formlogin" (ngSubmit)="onSubmit()">
       <div class="inputs">
         <label class="labels"> Usuario</label>
-        <input type="text" formControlName="usuarioImput" placeholder="Ingrese su nombre de usuario" />
+        <input
+          type="text"
+          formControlName="usuarioImput"
+          placeholder="Ingrese su nombre de usuario"
+          [ngClass]="{
+            'is-invalid': submitted && formlogin.controls['usuarioImput'].errors
+          }"
+        />
       </div>
 
       <div class="inputs">
         <label class="labels"> Contraseña</label>
-        <input type="password" placeholder="Ingrese su contraseña" />
+        <input
+          type="password"
+          formControlName="contraImput"
+          placeholder="Ingrese su contraseña"
+          [ngClass]="{
+            'is-invalid': submitted && formlogin.controls['contraImput'].errors
+          }"
+        />
       </div>
 
       <div>
-        <button class="btnLogin"(click)="goIngresar()">Ingresar</button>
+        <button class="btnLogin" (ngSubmit)="onSubmit()">Ingresar</button>
         <button class="btnRegister" (click)="goRegister()">Registrarse</button>
         <button class="provisional" [routerLink]="['../admin']">Admin</button>
       </div>
-
     </form>
   </div>
 </div>

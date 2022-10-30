@@ -9,6 +9,9 @@
             type="text"
             formControlName="nameImput"
             placeholder="Ingrese su nombre completo"
+            [ngClass]="{
+              'is-invalid': submitted && formulario.controls['nameImput'].errors
+            }"
           />
         </div>
 
@@ -18,6 +21,10 @@
             formControlName="emailImput"
             type="email"
             placeholder="Ingrese su correo"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formulario.controls['emailImput'].errors
+            }"
           />
         </div>
       </div>
@@ -29,6 +36,10 @@
             formControlName="usuarioImput"
             type="text"
             placeholder="Ingrese su usuario"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formulario.controls['usuarioImput'].errors
+            }"
           />
         </div>
 
@@ -38,6 +49,11 @@
             type="password"
             formControlName="contraImput"
             placeholder="Ingrese su contraseña"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formulario.controls['contraImput'].errors
+            }"
+            minlength="8"
           />
         </div>
       </div>
@@ -55,6 +71,10 @@
             formControlName="ubicacionImput"
             type="text"
             placeholder="Ingrese su dirrección"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formulario.controls['ubicacionImput'].errors
+            }"
           />
         </div>
       </div>
@@ -66,6 +86,10 @@
             formControlName="telImput"
             type="tel"
             placeholder="Ingrese su telefono"
+            [ngClass]="{
+              'is-invalid': submitted && formulario.controls['telImput'].errors
+            }"
+            minlength="8"
           />
         </div>
         <div class="inputs">
@@ -74,6 +98,10 @@
             formControlName="sectorImput"
             type="tel"
             placeholder="Sector Turistico que desempeña "
+            [ngClass]="{
+              'is-invalid':
+                submitted && formulario.controls['sectorImput'].errors
+            }"
           />
         </div>
       </div>

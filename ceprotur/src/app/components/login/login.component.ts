@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,33 +13,30 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  formulario: FormGroup;
+  formlogin!: FormGroup;
   user: any;
   contra: any;
+  submitted = false;
 
-  constructor(private router: Router) {
-    this.formulario = new FormGroup({
-      usuarioImput: new FormControl(),
-      contraImput: new FormControl(),
+  constructor(private router: Router, private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formlogin = this.formBuilder.group({
+      usuarioImput: ['', Validators.required],
+      contraImput: ['', [Validators.required]],
     });
-    this.user = this.formulario.get('usuarioImput');
-    this.contra = this.formulario.get('contraImput');
   }
 
-  ngOnInit(): void {}
-
-  login(){
-
-  }
   goRegister() {
     this.router.navigate(['register']);
   }
-  onSubmit(){
-    console.log(this.formulario.value);
-  }
-
-  goIngresar() {
-    this.router.navigate(['users']);
+  onSubmit() {
+    this.submitted = true;
+    if (this.formlogin.invalid) {
+      alert('Error al iniciar sesión');
+      return;
+    }
+    this.router.navigate(['home']);
+    console.log(this.formlogin.value);
   }
 }
