@@ -1,7 +1,8 @@
+<app-header></app-header>
 <div class="flex-center-center home">
   <div class="users">
     <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
-    <form formGroup="formService" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formService" (ngSubmit)="onSubmit()">
       <div class="inputs">
         <label class="labels"> SOLICITAR SERVICIO<br /></label>
         <div class="inputs">

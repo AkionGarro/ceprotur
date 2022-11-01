@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
+import { CreateServiceComponent } from './components/create-service/create-service.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     RegisterComponent,
     HomeComponent,
+    CreateServiceComponent,
   ],
   imports: [
     BrowserModule,

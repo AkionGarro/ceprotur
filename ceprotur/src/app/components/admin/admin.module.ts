@@ -10,11 +10,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ServiciosComponent } from './servicios/servicios.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    ServiciosComponent
   ],
   imports: [
     CommonModule,

@@ -1,88 +1,99 @@
 <body>
-    <div class="row">
-        <mat-toolbar class="bg-transparent">
-            <div class="col-2">
-                <button mat-icon-button class="example-icon" [routerLink]="['../']">
-                    <mat-icon>arrow_back</mat-icon>
-                </button>
+  <div class="row">
+    <mat-toolbar class="bg-transparent">
+      <div class="col-2">
+        <button mat-icon-button class="example-icon" [routerLink]="['../']">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="col-8 row1"></div>
+      <div class="col-2 right-content-options">
+        <button
+          mat-icon-button
+          class="right-options"
+          aria-label="Example icon-button with heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          class="right-options"
+          aria-label="Example icon-button with share icon"
+        >
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>
 
-
+  <div class="row">
+    <div class="flex-center-center home">
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="login">
+          <div class="d-flex">
+            <div class="inputs">
+              <label class="labels h3">Agregar un nuevo administrador</label>
             </div>
-            <div class="col-8 row1">
+          </div>
 
-
-
-            </div>
-            <div class="col-2 right-content-options">
-                <button mat-icon-button class="right-options" aria-label="Example icon-button with heart icon">
-                    <mat-icon>favorite</mat-icon>
-                </button>
-                <button mat-icon-button class="right-options" aria-label="Example icon-button with share icon">
-                    <mat-icon>account_circle</mat-icon>
-                </button>
+          <div class="d-flex">
+            <div class="inputs">
+              <label class="labels"> Nombre</label>
+              <input
+                type="text"
+                formControlName="name"
+                placeholder="Ingrese el nombre completo"
+              />
             </div>
 
+            <div class="inputs">
+              <label class="labels"> Correo</label>
+              <input
+                formControlName="email"
+                type="email"
+                placeholder="Ingrese el correo"
+              />
+            </div>
+          </div>
 
-        </mat-toolbar>
-    </div>
+          <div class="d-flex">
+            <div class="inputs">
+              <label class="labels"> Usuario</label>
+              <input
+                formControlName="usuario"
+                type="text"
+                placeholder="Ingrese el usuario nuevo"
+              />
+            </div>
 
+            <div class="inputs">
+              <label class="labels"> Contraseña</label>
+              <input
+                type="password"
+                formControlName="password"
+                placeholder="Ingrese una contraseña nueva"
+              />
+            </div>
+          </div>
 
+          <div class="d-flex">
+            <div class="inputs">
+              <label class="labels"> Telefono</label>
+              <input
+                formControlName="telefono"
+                type="tel"
+                placeholder="Ingrese el telefono"
+              />
+            </div>
+          </div>
 
-    <div class="row">
-        <div class="flex-center-center home">
-
-
-            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-
-                <div class="login">
-
-                    <div class="d-flex">
-                        <div class="inputs">
-                            <label class="labels h3">Agregar un nuevo administrador</label>
-                        </div>
-                    </div>
-
-                    <div class="d-flex">
-                        <div class="inputs">
-                            <label class="labels"> Nombre</label>
-                            <input type="text" formControlName="nameImput" placeholder="Ingrese el nombre completo" />
-                        </div>
-
-                        <div class="inputs">
-                            <label class="labels"> Correo</label>
-                            <input formControlName="emailImput" type="email" placeholder="Ingrese el correo" />
-                        </div>
-                    </div>
-
-                    <div class="d-flex">
-                        <div class="inputs">
-                            <label class="labels"> Usuario</label>
-                            <input formControlName="usuarioImput" type="text" placeholder="Ingrese el usuario nuevo" />
-                        </div>
-
-                        <div class="inputs">
-                            <label class="labels"> Contraseña</label>
-                            <input type="password" formControlName="contraImput"
-                                placeholder="Ingrese una contraseña nueva" />
-                        </div>
-                    </div>
-
-
-                    <div class="d-flex">
-                        <div class="inputs">
-                            <label class="labels"> Telefono</label>
-                            <input formControlName="telImput" type="tel" placeholder="Ingrese el telefono" />
-                        </div>
-
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btnRegister">Agregar nuevo admin</button>
-                    </div>
-                </div>
-            </form>
+          <div>
+            <button type="submit" class="btnRegister">
+              Agregar nuevo admin
+            </button>
+          </div>
         </div>
-
+      </form>
     </div>
-
+  </div>
 </body>

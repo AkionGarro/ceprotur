@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
-import { FormControl, Validators } from '@angular/forms';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css'],
+  selector: 'app-create-service',
+  templateUrl: './create-service.component.html',
+  styleUrls: ['./create-service.component.css'],
 })
-export class UsersComponent implements OnInit {
+export class CreateServiceComponent implements OnInit {
   formService!: FormGroup;
   submitted = false;
   constructor(
