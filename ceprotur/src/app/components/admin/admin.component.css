@@ -4,7 +4,8 @@
 
 
 .home {
-  overflow-x: hidden;
-  background-image: linear-gradient(to right, #DECBA4, #3E5151);
+  overflow: hidden;
+  height: 100vh;
+  background: url("../../../assets/bg9.jpg");
 
 }

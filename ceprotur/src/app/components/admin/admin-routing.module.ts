@@ -7,11 +7,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 const routes: Routes = [
   { path: '', component: AdminComponent },
   { path: 'add-admin', component: AddAdminComponent },
-<<<<<<< Updated upstream
   { path: 'servicios', component: ServiciosComponent },
-=======
-
->>>>>>> Stashed changes
 ];
 
 @NgModule({
