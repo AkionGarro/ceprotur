@@ -1,4 +1,5 @@
 <div class="flex-center-center home">
+<<<<<<< Updated upstream
   <div class="row">
     <p>
       <mat-toolbar class="bg-transparent">
@@ -39,3 +40,64 @@
     </p>
   </div>
 </div>
+=======
+    <div class="row">
+        <p>
+            <mat-toolbar class="bg-transparent">
+                <button mat-icon-button
+                    [matMenuTriggerFor]="menu">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['./add-admin']">
+                        <mat-icon>person_add</mat-icon>
+                        <span>Añadir administrador</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['../login']">
+                        <mat-icon>logout</mat-icon>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </mat-menu>
+                <span>Administrador</span>
+                <span class="example-spacer"></span>
+                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </mat-toolbar>
+        </p>
+    </div>
+
+    <div class="row">
+        <mat-tab-group style="color: rgb(255, 255, 255);">
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">list_alt</mat-icon>
+                 Lista de servicios
+              </ng-template>
+                <app-lista-servicios></app-lista-servicios>
+            </mat-tab>
+          
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Second
+              </ng-template>
+              Content 2
+            </mat-tab>
+          
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Third
+              </ng-template>
+          
+              Content 3
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+
+</div>
+>>>>>>> Stashed changes

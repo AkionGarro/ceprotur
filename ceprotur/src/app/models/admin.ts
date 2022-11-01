@@ -4,4 +4,11 @@ export interface Admin {
     usuario: String;
     password: String;
     telefono: String;
-  }
+}
+
+export interface ListServiceInterface {
+  position: number;
+  name: string;
+  tipo: string;
+  
+}

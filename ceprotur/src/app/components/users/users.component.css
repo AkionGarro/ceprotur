@@ -9,7 +9,11 @@
   /*Ajusta el tamaño de la pagina*/
   overflow: hidden;
   height: 100vh;
+<<<<<<< Updated upstream
 
+=======
+  background-image: linear-gradient(to right, #DECBA4, #3E5151);
+>>>>>>> Stashed changes
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

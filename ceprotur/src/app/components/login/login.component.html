@@ -5,6 +5,7 @@
     <form [formGroup]="formlogin" (ngSubmit)="onSubmit()">
       <div class="inputs">
         <label class="labels"> Usuario</label>
+<<<<<<< Updated upstream
         <input
           type="text"
           formControlName="usuarioImput"
@@ -13,10 +14,15 @@
             'is-invalid': submitted && formlogin.controls['usuarioImput'].errors
           }"
         />
+=======
+        <input type="text" formControlName="usuarioImput" placeholder="Ingrese su nombre de usuario"
+        value="user" />
+>>>>>>> Stashed changes
       </div>
 
       <div class="inputs">
         <label class="labels"> Contraseña</label>
+<<<<<<< Updated upstream
         <input
           type="password"
           formControlName="contraImput"
@@ -25,12 +31,17 @@
             'is-invalid': submitted && formlogin.controls['contraImput'].errors
           }"
         />
+=======
+        <input type="password" formControlName="contraImput" placeholder="Ingrese su contraseña" 
+        value="user"/>
+>>>>>>> Stashed changes
       </div>
 
       <div>
         <button class="btnLogin" (ngSubmit)="onSubmit()">Ingresar</button>
         <button class="btnRegister" (click)="goRegister()">Registrarse</button>
         <button class="provisional" [routerLink]="['../admin']">Admin</button>
+        <button class="provisional" [routerLink]="['../users']">User</button>
       </div>
     </form>
   </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaServiciosComponent } from './lista-servicios/lista-servicios.component';
 
 @Component({
   selector: 'app-admin',
