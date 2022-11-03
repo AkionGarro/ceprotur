@@ -2,6 +2,11 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
+class userLogin():
+    def __init__(self,name,password):
+        self.name = name
+        self.password= password
+
 class firestoreService():
 
     def __init__(self):
@@ -11,7 +16,7 @@ class firestoreService():
         except ValueError:
             self.app = firebase_admin.initialize_app(self.cred)
         self.db = firestore.client()
-        
+
 
     #Add document using know id, change document to document(user['name'])
     def addUser(self,user):
@@ -33,8 +38,8 @@ class firestoreService():
 
 
     #getUser with name and password
-    def getUser(self,name,password):
-        docRef = self.db.collection('users').where("usuarioImput","==",name).where("contraImput","==", password).get()
+    def getUser(self,user):
+        docRef = self.db.collection('users').where("usuarioImput","==",user.name).where("contraImput","==", user.password).get()
         user = docRef[0].to_dict()
         print(user)
         return user

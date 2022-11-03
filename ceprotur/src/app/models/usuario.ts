@@ -8,3 +8,8 @@ export interface Usuario {
   telefono: String;
   sector: String;
 }
+
+export interface userLogin {
+  name: String;
+  password: String;
+}

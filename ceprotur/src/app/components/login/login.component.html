@@ -7,10 +7,10 @@
         <label class="labels"> Usuario</label>
         <input
           type="text"
-          formControlName="usuarioImput"
+          formControlName="user"
           placeholder="Ingrese su nombre de usuario"
           [ngClass]="{
-            'is-invalid': submitted && formlogin.controls['usuarioImput'].errors
+            'is-invalid': submitted && formlogin.controls['user'].errors
           }"
         />
       </div>
@@ -19,10 +19,10 @@
         <label class="labels"> Contraseña</label>
         <input
           type="password"
-          formControlName="contraImput"
+          formControlName="password"
           placeholder="Ingrese su contraseña"
           [ngClass]="{
-            'is-invalid': submitted && formlogin.controls['contraImput'].errors
+            'is-invalid': submitted && formlogin.controls['password'].errors
           }"
         />
       </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { Usuario } from '../models/usuario';
+import { userLogin, Usuario } from '../models/usuario';
 import { Admin } from '../models/admin';
 import { Service } from '../models/service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,5 +33,8 @@ export class RegisterService {
 
   getUserAPI(): Observable<any> {
     return this.client.get(this.BASE_URL + 'user');
+  }
+  getUserLogin(user: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'login', user);
   }
 }

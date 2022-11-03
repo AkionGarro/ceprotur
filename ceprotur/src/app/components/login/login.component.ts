@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Service } from 'src/app/models/service';
 import { RegisterService } from 'src/app/services/register.service';
+import { userLogin } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +17,10 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class LoginComponent implements OnInit {
   formlogin!: FormGroup;
-  user: any;
-  contra: any;
+  userLog: userLogin = {
+    name: '',
+    password: '',
+  };
   submitted = false;
 
   constructor(
@@ -28,8 +31,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formlogin = this.formBuilder.group({
-      usuarioImput: ['', Validators.required],
-      contraImput: ['', [Validators.required]],
+      user: ['', Validators.required],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -37,17 +40,21 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
   onSubmit() {
-    this.service.getUserAPI().subscribe((data) => {
-      this.user = data;
-      console.log(this.user);
-    });
-
     this.submitted = true;
+    var formData: any = new FormData();
+
     if (this.formlogin.invalid) {
       alert('Error al iniciar sesión');
       return;
+    } else {
+      formData.append('name', this.formlogin.value.user);
+      formData.append('password', this.formlogin.value.password);
+      this.service.getUserLogin(formData).subscribe((data) => {
+        localStorage.setItem('localUser', JSON.stringify(data));
+        var userSettings = localStorage.getItem('localUser');
+        console.log(userSettings);
+        //this.router.navigate(['home']);
+      });
     }
-    this.router.navigate(['home']);
-    console.log(this.formlogin.value);
   }
 }
