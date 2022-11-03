@@ -3,11 +3,15 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 class firestoreService():
+
     def __init__(self):
         self.cred = credentials.Certificate('ceprotur-firebase-adminsdk-xvjjf-a97121250f.json')
-        self.app = firebase_admin.initialize_app(self.cred)
+        try:
+            self.app = firebase_admin.get_app()
+        except ValueError:
+            self.app = firebase_admin.initialize_app(self.cred)
         self.db = firestore.client()
-
+        
 
     #Add document using know id, change document to document(user['name'])
     def addUser(self,user):

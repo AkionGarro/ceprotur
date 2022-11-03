@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RegisterService {
-  private BASE_URL = 'http://ceproturuser.pythonanywhere.com/';
+  //private BASE_URL = 'http://ceproturuser.pythonanywhere.com/';
+  private BASE_URL = 'http://localhost:5000/';
   constructor(private firestore: Firestore, private client: HttpClient) {}
 
   addUser(user: Usuario) {
