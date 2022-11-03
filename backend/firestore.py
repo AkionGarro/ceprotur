@@ -8,6 +8,8 @@ class firestoreService():
         self.app = firebase_admin.initialize_app(self.cred)
         self.db = firestore.client()
 
+
+    #Add document using know id, change document to document(user['name'])
     def addUser(self,user):
         doc_ref = self.db.collection(u'users').document(u'alovelace')
         doc_ref.set({
@@ -24,5 +26,25 @@ class firestoreService():
             print(f'{doc.id} => {doc.to_dict()}')
             users.append(doc.to_dict())
         return users
+
+
+    #getUser with name and password
+    def getUser(self,name,password):
+        docRef = self.db.collection('users').where("usuarioImput","==",name).where("contraImput","==", password).get()
+        user = docRef[0].to_dict()
+        print(user)
+        return user
+
+    def getServicesFromUser(self):
+        collections = self.db.collection('users').document('alovelace').collections()
+        for collection in collections:
+            for doc in collection.stream():
+                print(doc.to_dict())
+
+
+
+
+
+
 
 

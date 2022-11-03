@@ -6,6 +6,8 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { Service } from 'src/app/models/service';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,11 @@ export class LoginComponent implements OnInit {
   contra: any;
   submitted = false;
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private service: RegisterService
+  ) {}
 
   ngOnInit(): void {
     this.formlogin = this.formBuilder.group({
@@ -31,6 +37,11 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
   onSubmit() {
+    this.service.getUserAPI().subscribe((data) => {
+      this.user = data;
+      console.log(this.user);
+    });
+
     this.submitted = true;
     if (this.formlogin.invalid) {
       alert('Error al iniciar sesión');

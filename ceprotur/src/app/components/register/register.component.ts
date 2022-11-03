@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     { nombre: 'Profesional de Turismo' },
   ];
 
-  formulario!: FormGroup;
+  registerForm!: FormGroup;
   submitted = false;
 
   constructor(
@@ -31,15 +31,15 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formulario = this.formBuilder.group({
-      nameImput: ['', Validators.required],
-      emailImput: ['', [Validators.required, Validators.email]],
-      usuarioImput: ['', Validators.required],
-      contraImput: ['', [Validators.required, Validators.minLength(8)]],
-      tipoUserImput: ['', Validators.required],
-      ubicacionImput: ['', Validators.required],
-      telImput: ['', Validators.required],
-      sectorImput: ['', Validators.required],
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      user: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      userType: ['', Validators.required],
+      address: ['', Validators.required],
+      telephone: ['', Validators.required],
+      tourismSector: ['', Validators.required],
     });
   }
 
@@ -48,14 +48,16 @@ export class RegisterComponent implements OnInit {
   }
   async onSubmit() {
     this.submitted = true;
-    if (this.formulario.invalid) {
+    if (this.registerForm.invalid) {
       alert('formulario invalido');
       return;
     }
     alert('Success');
 
-    console.log(this.formulario.value);
-    const response = await this.registerService.addUser(this.formulario.value);
+    console.log(this.registerForm.value);
+    const response = await this.registerService.addUser(
+      this.registerForm.value
+    );
     console.log(response);
     this.goLogin();
   }

@@ -1,5 +1,5 @@
 <div class="flex-center-center home">
-  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="login">
       <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
       <div class="d-flex">
@@ -7,10 +7,11 @@
           <label class="labels"> Nombre</label>
           <input
             type="text"
-            formControlName="nameImput"
+            formControlName="name"
             placeholder="Ingrese su nombre completo"
             [ngClass]="{
-              'is-invalid': submitted && formulario.controls['nameImput'].errors
+              'is-invalid':
+                submitted && registerForm.controls['nameImput'].errors
             }"
           />
         </div>
@@ -18,12 +19,12 @@
         <div class="inputs">
           <label class="labels"> Correo</label>
           <input
-            formControlName="emailImput"
+            formControlName="email"
             type="email"
             placeholder="Ingrese su correo"
             [ngClass]="{
               'is-invalid':
-                submitted && formulario.controls['emailImput'].errors
+                submitted && registerForm.controls['emailImput'].errors
             }"
           />
         </div>
@@ -33,12 +34,12 @@
         <div class="inputs">
           <label class="labels"> Usuario</label>
           <input
-            formControlName="usuarioImput"
+            formControlName="user"
             type="text"
             placeholder="Ingrese su usuario"
             [ngClass]="{
               'is-invalid':
-                submitted && formulario.controls['usuarioImput'].errors
+                submitted && registerForm.controls['usuarioImput'].errors
             }"
           />
         </div>
@@ -47,11 +48,11 @@
           <label class="labels"> Contraseña</label>
           <input
             type="password"
-            formControlName="contraImput"
+            formControlName="password"
             placeholder="Ingrese su contraseña"
             [ngClass]="{
               'is-invalid':
-                submitted && formulario.controls['contraImput'].errors
+                submitted && registerForm.controls['contraImput'].errors
             }"
             minlength="8"
           />
@@ -59,7 +60,7 @@
       </div>
 
       <div class="d-flex">
-        <select class="form-select" formControlName="tipoUserImput">
+        <select class="form-select" formControlName="userType">
           <option selected disabled>Tipo de usuario</option>
           <option *ngFor="let tipo of tipoUser">
             {{ tipo.nombre }}
@@ -68,12 +69,12 @@
         <div class="inputs">
           <label class="labels"> Ubicacion</label>
           <input
-            formControlName="ubicacionImput"
+            formControlName="address"
             type="text"
             placeholder="Ingrese su dirrección"
             [ngClass]="{
               'is-invalid':
-                submitted && formulario.controls['ubicacionImput'].errors
+                submitted && registerForm.controls['ubicacionImput'].errors
             }"
           />
         </div>
@@ -83,11 +84,12 @@
         <div class="inputs">
           <label class="labels"> Telefono</label>
           <input
-            formControlName="telImput"
+            formControlName="telephone"
             type="tel"
             placeholder="Ingrese su telefono"
             [ngClass]="{
-              'is-invalid': submitted && formulario.controls['telImput'].errors
+              'is-invalid':
+                submitted && registerForm.controls['telImput'].errors
             }"
             minlength="8"
           />
@@ -95,12 +97,13 @@
         <div class="inputs">
           <label class="labels"> Sector Turistico</label>
           <input
-            formControlName="sectorImput"
+            formControlName="
+            tourismSector"
             type="tel"
             placeholder="Sector Turistico que desempeña "
             [ngClass]="{
               'is-invalid':
-                submitted && formulario.controls['sectorImput'].errors
+                submitted && registerForm.controls['sectorImput'].errors
             }"
           />
         </div>
