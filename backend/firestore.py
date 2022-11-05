@@ -20,6 +20,15 @@ class userRegister():
         self.telephone = telephone
         self.tourismSector = tourismSector
 
+class adminRegister():
+    def __init__(self, name, email, username, password, telephone):
+        self.name = name
+        self.email = email
+        self.username = username
+        self.password = password
+        self.telephone = telephone
+
+
 
 class serviceAdd():
     def __init__(self, companyDescription, serviceDescription, serviceType, username):
@@ -52,7 +61,26 @@ class firestoreService():
                 'typeUser': user.typeUser,
                 'address': user.address,
                 'telephone': user.telephone,
-                'tourismSector': user.tourismSector
+                'tourismSector': user.tourismSector,
+                'access':'user'
+            })
+            res = {'result': 'Sucess'}
+            return res
+        else:
+            res = {'result': 'Change Username'}
+            return res
+
+    def addAdmin(self, user):
+        checkUser = self.db.collection('users').where("username", "==", user.username).get()
+        if checkUser == []:
+            doc_ref = self.db.collection(u'users').document(user.username)
+            doc_ref.set({
+                'name': user.name,
+                'email': user.email,
+                'username': user.username,
+                'password': user.password,
+                'telephone': user.telephone,
+                'access':'admin'
             })
             res = {'result': 'Sucess'}
             return res

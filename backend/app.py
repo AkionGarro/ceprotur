@@ -66,4 +66,17 @@ def adminServices():
     return jsonify(res)
 
 
+@app.route('/adminRegister', methods=['POST', 'GET'])
+@cross_origin()
+def adminRegister():
+    fire = firestoreService()
+    name = request.form.get('name')
+    email = request.form.get('email')
+    username = request.form.get('username')
+    password = request.form.get('password')
+    telephone = request.form.get('telephone')
+    userLog = userRegister(name, email, username, password,telephone)
+    res = fire.addAdmin(userLog)
+    return jsonify(res)
+
 app.run()
