@@ -17,6 +17,16 @@ class userRegister():
         self.telephone = telephone
         self.tourismSector =tourismSector
 
+
+class serviceAdd():
+    def __init__(self, companyDescription,serviceDescription,serviceType,username):
+        self.companyDescription = companyDescription
+        self.serviceDescription=serviceDescription
+        self.serviceType= serviceType
+        self.username = username
+
+
+
 class firestoreService():
 
     def __init__(self):
@@ -74,6 +84,20 @@ class firestoreService():
         else:
             print('No se encuentra el usuario')
             return None;
+
+
+    def addService(self,service):
+        code =str(service.username+service.serviceType)
+        doc_ref = self.db.collection('services').document(code)
+        doc_ref.set({
+            'serviceDescription': service.serviceDescription,
+            'companyDescription': service.companyDescription,
+            'serviceType': service.serviceType,
+            'username': service.username,
+        })
+        res = {'result': 'Sucess'}
+        return res
+
 
 
 

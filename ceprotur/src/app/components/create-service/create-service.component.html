@@ -8,36 +8,54 @@
         <div class="inputs">
           <label class="labels"> Descripción de la Empresa<br /></label>
           <textarea
-            formControlName="descripcionEmpresa"
+            formControlName="companyDescription"
             name="comment"
             rows="4"
             cols="35"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['companyDescription'].errors
+            }"
           ></textarea>
         </div>
 
         <div class="inputs">
           <label class="labels"> Descripción de Necesidades<br /></label>
           <textarea
-            formControlName="descripcionNecesidad"
+            formControlName="serviceDescription"
             name="comment"
             rows="4"
             cols="35"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['serviceDescription'].errors
+            }"
           ></textarea>
         </div>
 
         <div class="inputs">
           <label for="lang">Tipo de Servicio<br /></label>
           <br />
-          <select name="servicio" id="lang" formControlName="tipoServicio">
-            <option value="asesoria">Asesoría</option>
-            <option value="b">Consultoría</option>
-            <option value="j">Capacitación</option>
-            <option value="m">Contratación de Profesionales</option>
+          <select
+            name="servicio"
+            id="lang"
+            formControlName="serviceType"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['serviceType'].errors
+            }"
+          >
+            <option value="as">Asesoría</option>
+            <option value="cl">Consultoría</option>
+            <option value="cp">Capacitación</option>
+            <option value="sp">Contratación de Profesionales</option>
           </select>
         </div>
 
         <div>
-          <button class="btnUsers">Enviar Solicitud</button>
+          <button class="btnUsers" (ngSubmit)="onSubmit()">
+            Enviar Solicitud
+          </button>
         </div>
       </div>
     </form>

@@ -19,25 +19,33 @@ export class CreateServiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.formService = this.formBuilder.group({
-      descripcionNecesidad: ['', Validators.required],
-      descripcionEmpresa: ['', Validators.required],
-      tipoServicio: ['', Validators.required],
+      serviceDescription: ['', Validators.required],
+      companyDescription: ['', Validators.required],
+      serviceType: ['', Validators.required],
     });
   }
 
-  async onSubmit() {
+  onSubmit() {
     this.submitted = true;
     if (this.formService.invalid) {
       alert('formulario invalido');
       return;
+    } else {
+      var formData: any = new FormData();
+      formData.append(
+        'serviceDescription',
+        this.formService.value.serviceDescription
+      );
+      formData.append(
+        'companyDescription',
+        this.formService.value.companyDescription
+      );
+      formData.append('serviceType', this.formService.value.serviceType);
+      formData.append('username', localStorage['localUser']);
+      this.registerService.createServiceWithUser(formData).subscribe((res) => {
+        console.log(res);
+        this.router.navigate(['/home']);
+      });
     }
-    alert('Success');
-
-    console.log(this.formService.value);
-    const response = await this.registerService.addService(
-      this.formService.value
-    );
-    console.log(response);
-    this.router.navigate(['home']);
   }
 }
