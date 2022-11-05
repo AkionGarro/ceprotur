@@ -6,6 +6,16 @@ class userLogin():
     def __init__(self,name,password):
         self.name = name
         self.password= password
+class userRegister():
+    def __init__(self, name,email,username, password,typeUser,address,telephone,tourismSector):
+        self.name = name
+        self.email = email
+        self.username = username
+        self.password = password
+        self.typeUser = typeUser
+        self.address = address
+        self.telephone = telephone
+        self.tourismSector =tourismSector
 
 class firestoreService():
 
@@ -20,11 +30,16 @@ class firestoreService():
 
     #Add document using know id, change document to document(user['name'])
     def addUser(self,user):
-        doc_ref = self.db.collection(u'users').document(u'alovelace')
+        doc_ref = self.db.collection(u'users').document(user.username)
         doc_ref.set({
-            u'first': u'AK',
-            u'last': u'Lovelace',
-            u'born': 1815
+            'name': user.name,
+            'email' : user.email,
+            'username' : user.username,
+            'passwor' : user.password,
+            'typeUser' : user.typeUser,
+            'address' : user.address,
+            'telephone' : user.telephone,
+            'tourismSector' : user.tourismSector
         })
 
     def getUsers(self):
@@ -39,19 +54,22 @@ class firestoreService():
 
     #getUser with name and password
     def getUser(self,user):
-        docRef = self.db.collection('users').where("usuarioImput","==",user.name).where("contraImput","==", user.password).get()
-        user = docRef[0].to_dict()
-        print(user)
-        return user
+        docRef = self.db.collection('users').where("usuarioImput","==",user.name).get()
+        userRes = docRef[0].to_dict()
+        if userRes['contraImput'] == user.password:
+            print(userRes)
+            return userRes
+        else:
+            print('Contra incorecta')
+            return None;
+
+
 
     def getServicesFromUser(self):
         collections = self.db.collection('users').document('alovelace').collections()
         for collection in collections:
             for doc in collection.stream():
                 print(doc.to_dict())
-
-
-
 
 
 

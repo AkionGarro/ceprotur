@@ -50,10 +50,14 @@ export class LoginComponent implements OnInit {
       formData.append('name', this.formlogin.value.user);
       formData.append('password', this.formlogin.value.password);
       this.service.getUserLogin(formData).subscribe((data) => {
-        localStorage.setItem('localUser', JSON.stringify(data));
-        var userSettings = localStorage.getItem('localUser');
-        console.log(userSettings);
-        //this.router.navigate(['home']);
+        if (data != null) {
+          localStorage.setItem('localUser', JSON.stringify(data));
+          var userSettings = localStorage.getItem('localUser');
+          console.log(userSettings);
+          this.router.navigate(['home']);
+        } else {
+          alert('Error al iniciar sesión');
+        }
       });
     }
   }
