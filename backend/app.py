@@ -1,8 +1,7 @@
 from flask import Flask, redirect, url_for, request, jsonify
 
-from firestore import firestoreService, userLogin
+from firestore import firestoreService, userLogin, userRegister
 from flask_cors import CORS, cross_origin
-
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -19,7 +18,21 @@ def login():
    res = fire.getUser(userLog)
    return jsonify(res)
 
-
+@app.route('/register',methods = ['POST', 'GET'])
+@cross_origin()
+def register():
+   fire = firestoreService()
+   name = request.form.get('name')
+   email = request.form.get('email')
+   username = request.form.get('username')
+   password = request.form.get('password')
+   userType = request.form.get('userType')
+   address = request.form.get('address')
+   telephone = request.form.get('telephone')
+   tourismSector = request.form.get('tourismSector')
+   userLog = userRegister(name,email,username, password,userType,address,telephone,tourismSector)
+   res = fire.addUser(userLog)
+   return jsonify(res)
 
 
 app.run()

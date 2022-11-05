@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import {
   FormGroup,
   FormControl,
-  FormBuilder,
   Validators,
+  FormBuilder,
 } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
 import { Admin } from 'src/app/models/admin';
@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      user: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       userType: ['', Validators.required],
       address: ['', Validators.required],
@@ -43,22 +43,31 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  goLogin() {
-    this.router.navigate(['/login']);
-  }
-  async onSubmit() {
+  onSubmit() {
     this.submitted = true;
+
     if (this.registerForm.invalid) {
       alert('formulario invalido');
       return;
+    } else {
+      var formData: any = new FormData();
+      formData.append('name', this.registerForm.value.name);
+      formData.append('email', this.registerForm.value.email);
+      formData.append('username', this.registerForm.value.username);
+      formData.append('password', this.registerForm.value.password);
+      formData.append('userType', this.registerForm.value.userType);
+      formData.append('address', this.registerForm.value.address);
+      formData.append('telephone', this.registerForm.value.telephone);
+      formData.append('tourismSector', this.registerForm.value.tourismSector);
+      this.registerService.registerUser(formData).subscribe((data) => {
+        console.log(data);
+        if (data != null) {
+          this.router.navigate(['/login']);
+          alert('Usuario registrado');
+        } else {
+          alert('Error al registrar usuario');
+        }
+      });
     }
-    alert('Success');
-
-    console.log(this.registerForm.value);
-    const response = await this.registerService.addUser(
-      this.registerForm.value
-    );
-    console.log(response);
-    this.goLogin();
   }
 }

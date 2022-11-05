@@ -10,8 +10,7 @@
             formControlName="name"
             placeholder="Ingrese su nombre completo"
             [ngClass]="{
-              'is-invalid':
-                submitted && registerForm.controls['nameImput'].errors
+              'is-invalid': submitted && registerForm.controls['name'].errors
             }"
           />
         </div>
@@ -23,8 +22,7 @@
             type="email"
             placeholder="Ingrese su correo"
             [ngClass]="{
-              'is-invalid':
-                submitted && registerForm.controls['emailImput'].errors
+              'is-invalid': submitted && registerForm.controls['email'].errors
             }"
           />
         </div>
@@ -34,12 +32,12 @@
         <div class="inputs">
           <label class="labels"> Usuario</label>
           <input
-            formControlName="user"
+            formControlName="username"
             type="text"
             placeholder="Ingrese su usuario"
             [ngClass]="{
               'is-invalid':
-                submitted && registerForm.controls['usuarioImput'].errors
+                submitted && registerForm.controls['username'].errors
             }"
           />
         </div>
@@ -52,7 +50,7 @@
             placeholder="Ingrese su contraseña"
             [ngClass]="{
               'is-invalid':
-                submitted && registerForm.controls['contraImput'].errors
+                submitted && registerForm.controls['password'].errors
             }"
             minlength="8"
           />
@@ -73,8 +71,7 @@
             type="text"
             placeholder="Ingrese su dirrección"
             [ngClass]="{
-              'is-invalid':
-                submitted && registerForm.controls['ubicacionImput'].errors
+              'is-invalid': submitted && registerForm.controls['address'].errors
             }"
           />
         </div>
@@ -89,7 +86,7 @@
             placeholder="Ingrese su telefono"
             [ngClass]="{
               'is-invalid':
-                submitted && registerForm.controls['telImput'].errors
+                submitted && registerForm.controls['telephone'].errors
             }"
             minlength="8"
           />
@@ -97,20 +94,21 @@
         <div class="inputs">
           <label class="labels"> Sector Turistico</label>
           <input
-            formControlName="
-            tourismSector"
+            formControlName="tourismSector"
             type="tel"
             placeholder="Sector Turistico que desempeña "
             [ngClass]="{
               'is-invalid':
-                submitted && registerForm.controls['sectorImput'].errors
+                submitted && registerForm.controls['tourismSector'].errors
             }"
           />
         </div>
       </div>
 
       <div>
-        <button type="submit" class="btnRegister">Registrarse</button>
+        <button type="submit" class="btnRegister" (ngSubmit)="onSubmit()">
+          Registrarse
+        </button>
       </div>
     </div>
   </form>

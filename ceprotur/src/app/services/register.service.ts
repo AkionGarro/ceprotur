@@ -37,4 +37,7 @@ export class RegisterService {
   getUserLogin(user: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'login', user);
   }
+  registerUser(user: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'register', user);
+  }
 }
