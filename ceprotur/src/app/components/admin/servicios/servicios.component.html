@@ -2,17 +2,19 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Nombre</th>
       <th scope="col">Tipo</th>
       <th scope="col">Desripcion Problema</th>
       <th scope="col">Descripcion Empresa</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let service of servicesCreated; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ service["username"] }}</td>
+      <td>{{ service["serviceType"] }}</td>
+      <td>{{ service["serviceDescription"] }}</td>
+      <td>{{ service["companyDescription"] }}</td>
     </tr>
   </tbody>
 </table>
