@@ -38,8 +38,6 @@ def register():
 @cross_origin()
 def service():
    fire = firestoreService()
-
-
    serviceDescription = request.form.get('serviceDescription')
    companyDescription = request.form.get('companyDescription')
    serviceType = request.form.get('serviceType')
@@ -48,5 +46,13 @@ def service():
    res = fire.addService(serv)
    return jsonify(res)
 
+
+@app.route('/userServices',methods = ['POST', 'GET'])
+@cross_origin()
+def userServices():
+   fire = firestoreService()
+   username= request.form.get('username')
+   res = fire.getUserServices(username)
+   return jsonify(res)
 
 app.run()

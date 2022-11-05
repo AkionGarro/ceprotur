@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Descripcion Problema</th>
+      <th scope="col">Descripcion Empresa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let service of servicesUSer; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ service["serviceDescription"] }}</td>
+      <td>{{ service["companyDescription"] }}</td>
+      <td>{{ service["serviceType"] }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { CreateServiceComponent } from './components/create-service/create-service.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { CreatedServicesComponent } from './components/created-services/created-services.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     CreateServiceComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    CreatedServicesComponent,
   ],
   imports: [
     BrowserModule,

@@ -41,7 +41,7 @@ class firestoreService():
     #Add document using know id, change document to document(user['name'])
     def addUser(self,user):
         checkUser = self.db.collection('users').where("username", "==", user.username).get()
-        if checkUser != []:
+        if checkUser == []:
             doc_ref = self.db.collection(u'users').document(user.username)
             doc_ref.set({
                 'name': user.name,
@@ -98,15 +98,14 @@ class firestoreService():
         res = {'result': 'Sucess'}
         return res
 
+    def getUserServices(self, username):
+        docs = self.db.collection('services').where("username", "==", username).get()
+        services = []
+        for doc in docs:
+            print(f'{doc.id} => {doc.to_dict()}')
+            services.append(doc.to_dict())
+        return services
 
-
-
-
-    def getServicesFromUser(self):
-        collections = self.db.collection('users').document('LWOV2GpylQzwiLagcBkm').collections()
-        for collection in collections:
-            for doc in collection.stream():
-                print(doc.to_dict())
 
 
 

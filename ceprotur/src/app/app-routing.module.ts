@@ -5,6 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreateServiceComponent } from './components/create-service/create-service.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'home', component: HomeComponent },
   { path: 'create-service', component: CreateServiceComponent },
+  { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'contactUs', component: ContactUsComponent },
 ];
 
 @NgModule({

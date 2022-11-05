@@ -43,4 +43,7 @@ export class RegisterService {
   createServiceWithUser(service: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'service', service);
   }
+  getServices(username: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'userServices', username);
+  }
 }
