@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { Admin } from 'src/app/models/admin';
 import { RegisterService } from 'src/app/services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-admin',
@@ -20,27 +21,33 @@ export class AddAdminComponent implements OnInit {
   constructor(
     public screen: ScreenSizeService,
     private registerService: RegisterService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       name: ['', Validators.requiredTrue],
       email: ['', Validators.requiredTrue],
-      usuario: ['', Validators.requiredTrue],
+      username: ['', Validators.requiredTrue],
       password: ['', [Validators.requiredTrue, Validators.minLength(8)]],
-      telefono: ['', Validators.requiredTrue],
+      telephone: ['', Validators.requiredTrue],
     });
   }
-  async onSubmit() {
-    const response = await this.registerService.addAdmin(this.formulario.value);
-    console.log(response);
-
-    if (response) {
-      this.formulario.reset();
-      console.log('registrado');
-    } else {
-      console.log('Error al registrar');
-    }
+  onSubmit() {
+    var formData: any = new FormData();
+    formData.append('name', this.formulario.value.name);
+    formData.append('email', this.formulario.value.email);
+    formData.append('username', this.formulario.value.username);
+    formData.append('password', this.formulario.value.password);
+    formData.append('telephone', this.formulario.value.telephone);
+    this.registerService.registerAdmin(formData).subscribe((data) => {
+      if (data != null) {
+        alert('Usuario registrado');
+        this.router.navigate(['/admin']);
+      } else {
+        alert('Error al registrar usuario');
+      }
+    });
   }
 }

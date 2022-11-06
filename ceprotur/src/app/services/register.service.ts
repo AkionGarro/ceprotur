@@ -13,23 +13,7 @@ import { Observable } from 'rxjs';
 export class RegisterService {
   //private BASE_URL = 'http://ceproturuser.pythonanywhere.com/';
   private BASE_URL = 'http://localhost:5000/';
-  constructor(private firestore: Firestore, private client: HttpClient) {}
-
-  addUser(user: Usuario) {
-    const userRef = collection(this.firestore, 'users');
-    return addDoc(userRef, user);
-  }
-
-  //para agregar un admin
-  addAdmin(admin: Admin) {
-    const userRef = collection(this.firestore, 'users');
-    return addDoc(userRef, admin);
-  }
-
-  addService(service: Service) {
-    const serviceRef = collection(this.firestore, 'services');
-    return addDoc(serviceRef, service);
-  }
+  constructor(private client: HttpClient) {}
 
   getUserAPI(): Observable<any> {
     return this.client.get(this.BASE_URL + 'user');
@@ -39,6 +23,9 @@ export class RegisterService {
   }
   registerUser(user: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'register', user);
+  }
+  registerAdmin(admin: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'adminRegister', admin);
   }
   createServiceWithUser(service: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'service', service);

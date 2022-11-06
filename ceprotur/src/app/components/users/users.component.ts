@@ -27,19 +27,5 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  async onSubmit() {
-    this.submitted = true;
-    if (this.formService.invalid) {
-      alert('formulario invalido');
-      return;
-    }
-    alert('Success');
-
-    console.log(this.formService.value);
-    const response = await this.registerService.addService(
-      this.formService.value
-    );
-    console.log(response);
-    this.router.navigate(['home']);
-  }
+  onSubmit() {}
 }

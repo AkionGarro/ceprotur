@@ -52,7 +52,11 @@ export class LoginComponent implements OnInit {
       this.service.getUserLogin(formData).subscribe((data) => {
         if (data != null) {
           localStorage.setItem('localUser', data.username);
-          this.router.navigate(['home']);
+          if (data['access'] == 'admin') {
+            this.router.navigate(['admin']);
+          } else {
+            this.router.navigate(['home']);
+          }
         } else {
           alert('Error al iniciar sesión');
         }

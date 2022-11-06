@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, request, jsonify
 
-from firestore import firestoreService, userLogin, userRegister, serviceAdd
+from firestore import firestoreService, userLogin, userRegister, serviceAdd,adminRegister
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
@@ -68,14 +68,14 @@ def adminServices():
 
 @app.route('/adminRegister', methods=['POST', 'GET'])
 @cross_origin()
-def adminRegister():
+def addAdmin():
     fire = firestoreService()
     name = request.form.get('name')
     email = request.form.get('email')
     username = request.form.get('username')
     password = request.form.get('password')
     telephone = request.form.get('telephone')
-    userLog = userRegister(name, email, username, password,telephone)
+    userLog = adminRegister(name, email, username, password,telephone)
     res = fire.addAdmin(userLog)
     return jsonify(res)
 
