@@ -20,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CreatedServicesComponent } from './components/created-services/created-services.component';
+import { ShowServiceDetailsComponent } from './components/show-service-details/show-service-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CreatedServicesComponent } from './components/created-services/created-
     AboutUsComponent,
     ContactUsComponent,
     CreatedServicesComponent,
+    ShowServiceDetailsComponent,
   ],
   imports: [
     BrowserModule,

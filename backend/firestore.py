@@ -119,7 +119,8 @@ class firestoreService():
             'companyDescription': service.companyDescription,
             'serviceType': service.serviceType,
             'username': service.username,
-            'id': doc_ref.id
+            'id': doc_ref.id,
+            'created': firestore.SERVER_TIMESTAMP
         })
         res = {'result': 'Success',
                 'Id': doc_ref.id }
