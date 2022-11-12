@@ -20,4 +20,8 @@ export class CreatedServicesComponent implements OnInit {
       console.log(this.servicesUSer);
     });
   }
+
+  detailsService(id: any) {
+    console.log(id);
+  }
 }

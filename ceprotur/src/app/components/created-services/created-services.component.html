@@ -5,14 +5,19 @@
       <th scope="col">Tipo</th>
       <th scope="col">Descripcion Problema</th>
       <th scope="col">Descripcion Empresa</th>
+      <th scope="col">Service Id</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let service of servicesUSer; index as i">
-      <th scope="row">{{ i + 1 }}</th>
+    <tr
+      *ngFor="let service of servicesUSer; index as i"
+      (click)="detailsService(service['id'])"
+    >
+      <td scope="row">{{ i + 1 }}</td>
+      <td>{{ service["serviceType"] }}</td>
       <td>{{ service["serviceDescription"] }}</td>
       <td>{{ service["companyDescription"] }}</td>
-      <td>{{ service["serviceType"] }}</td>
+      <td>{{ service["id"] }}</td>
     </tr>
   </tbody>
 </table>

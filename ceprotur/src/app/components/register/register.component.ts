@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
 import { Admin } from 'src/app/models/admin';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -47,7 +48,7 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
 
     if (this.registerForm.invalid) {
-      alert('formulario invalido');
+      Swal.fire('Intente nuevamente', 'Error al crear el usuario', 'error');
       return;
     } else {
       var formData: any = new FormData();
@@ -62,10 +63,14 @@ export class RegisterComponent implements OnInit {
       this.registerService.registerUser(formData).subscribe((data) => {
         console.log(data);
         if (data != null) {
+          Swal.fire(
+            'Bienvenido a Ceprotur',
+            'Usuario creado con éxito',
+            'success'
+          );
           this.router.navigate(['/login']);
-          alert('Usuario registrado');
         } else {
-          alert('Error al registrar usuario');
+          this.router.navigate(['/register']);
         }
       });
     }
