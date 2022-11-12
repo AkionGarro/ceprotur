@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-service',
@@ -43,6 +44,7 @@ export class CreateServiceComponent implements OnInit {
       formData.append('serviceType', this.formService.value.serviceType);
       formData.append('username', localStorage['localUser']);
       this.registerService.createServiceWithUser(formData).subscribe((res) => {
+        Swal.fire('Petición creada con exito', 'ID:' + res['Id'], 'success');
         console.log(res);
         this.router.navigate(['/home']);
       });

@@ -113,15 +113,16 @@ class firestoreService():
             return None;
 
     def addService(self, service):
-        code = str(service.username + service.serviceType)
-        doc_ref = self.db.collection('services').document(code)
+        doc_ref = self.db.collection('services').document()
         doc_ref.set({
             'serviceDescription': service.serviceDescription,
             'companyDescription': service.companyDescription,
             'serviceType': service.serviceType,
             'username': service.username,
+            'id': doc_ref.id
         })
-        res = {'result': 'Sucess'}
+        res = {'result': 'Success',
+                'Id': doc_ref.id }
         return res
 
     def getUserServices(self, username):
