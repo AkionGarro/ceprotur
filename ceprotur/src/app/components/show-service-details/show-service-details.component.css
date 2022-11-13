@@ -1,0 +1,29 @@
+img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+h2,
+h3 {
+  text-align: center;
+}
+.servicesBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowService {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+
+.phase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}

@@ -7,6 +7,7 @@ import { UsersComponent } from './components/users/users.component';
 import { CreateServiceComponent } from './components/create-service/create-service.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { ShowServiceDetailsComponent } from './components/show-service-details/show-service-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'create-service', component: CreateServiceComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'contactUs', component: ContactUsComponent },
+  { path: 'detailsService/:var', component: ShowServiceDetailsComponent },
 ];
 
 @NgModule({

@@ -57,6 +57,15 @@ def userServices():
     res = fire.getUserServices(username)
     return jsonify(res)
 
+@app.route('/serviceById', methods=['POST', 'GET'])
+@cross_origin()
+def getServiceId():
+    fire = firestoreService()
+    id = request.form.get('id')
+    res = fire.getServiceById(id)
+    return jsonify(res)
+
+
 
 @app.route('/adminServices', methods=['POST', 'GET'])
 @cross_origin()

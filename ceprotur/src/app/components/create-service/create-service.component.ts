@@ -29,7 +29,7 @@ export class CreateServiceComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.formService.invalid) {
-      alert('formulario invalido');
+      Swal.fire('Petición Incompleta', 'Verifique los campos', 'error');
       return;
     } else {
       var formData: any = new FormData();

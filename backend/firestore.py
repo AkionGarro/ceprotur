@@ -134,6 +134,16 @@ class firestoreService():
             services.append(doc.to_dict())
         return services
 
+    def getServiceById(self, id):
+        docs = self.db.collection('services').where("id", "==", id).get()
+        if docs != []:
+            serviceRes = docs[0].to_dict()
+            return serviceRes
+        else:
+            print('No se encuentra el usuario')
+            return None;
+
+
     def getAdminServices(self):
         docs = self.db.collection('services').get()
         services = []
@@ -141,3 +151,4 @@ class firestoreService():
             print(f'{doc.id} => {doc.to_dict()}')
             services.append(doc.to_dict())
         return services
+

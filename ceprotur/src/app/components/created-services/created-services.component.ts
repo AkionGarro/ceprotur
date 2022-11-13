@@ -1,5 +1,8 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-created-services',
@@ -8,7 +11,7 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class CreatedServicesComponent implements OnInit {
   servicesUSer: any = [];
-  constructor(private service: RegisterService) {}
+  constructor(private service: RegisterService, private router: Router) {}
 
   ngOnInit(): void {
     var formData: any = new FormData();
@@ -22,6 +25,6 @@ export class CreatedServicesComponent implements OnInit {
   }
 
   detailsService(id: any) {
-    console.log(id);
+    this.router.navigate(['/detailsService', id]);
   }
 }

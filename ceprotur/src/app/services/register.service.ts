@@ -37,4 +37,8 @@ export class RegisterService {
   getAllServices(): Observable<any> {
     return this.client.get(this.BASE_URL + 'adminServices');
   }
+
+  getServicesById(id: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'serviceById', id);
+  }
 }

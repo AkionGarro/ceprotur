@@ -1,1 +1,51 @@
-<p>show-service-details works!</p>
+<div>
+  <h1>Service Details</h1>
+  <p>ID: {{ currentService["id"] }}</p>
+  <p>Name: {{ currentService["username"] }}</p>
+  <p>Created: {{ currentService["created"] }}</p>
+  <p>Service Descriptio: {{ currentService["serviceDescription"] }}</p>
+  <p>Service Type: {{ currentService["serviceType"] }}</p>
+  <p>Company Description: {{ currentService["companyDescription"] }}</p>
+</div>
+<div>
+  <h2>Etapas de Servicio</h2>
+  <div class="servicesBox">
+    <div class="rowService">
+      <div class="phase">
+        <h3>Inicio</h3>
+        <img src="../../../assets/etapaInicio.png" alt="" />
+        <button>Ir</button>
+      </div>
+      <div class="phase">
+        <h3>Planificacion</h3>
+        <img src="../../../assets/etapaPlanif.png" alt="" />
+        <button>Ir</button>
+      </div>
+    </div>
+
+    <div class="rowService">
+      <div class="phase">
+        <h3>Evaluacion</h3>
+        <img src="../../../assets/etapaEvaluacion.png" alt="" />
+        <button>Ir</button>
+      </div>
+      <div class="phase">
+        <h3>Negociacion</h3>
+        <img src="../../../assets/etapaNegociacion.png" alt="" />
+        <button>Ir</button>
+      </div>
+    </div>
+    <div class="rowService">
+      <div class="phase">
+        <h3>Ejeucion</h3>
+        <img src="../../../assets/etapaEjecucion.png" alt="" />
+        <button>Ir</button>
+      </div>
+      <div class="phase">
+        <h3>Cierre</h3>
+        <img src="../../../assets/etapaCierre.png" alt="" />
+        <button>Ir</button>
+      </div>
+    </div>
+  </div>
+</div>

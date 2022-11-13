@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class ServiciosComponent implements OnInit {
   servicesCreated: any = [];
-  constructor(private service: RegisterService) {}
+  constructor(private service: RegisterService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.getAllServices().subscribe((res) => {
@@ -16,5 +17,9 @@ export class ServiciosComponent implements OnInit {
       this.servicesCreated = res;
       console.log(this.servicesCreated);
     });
+  }
+
+  detailsService(id: any) {
+    this.router.navigate(['/detailsService', id]);
   }
 }

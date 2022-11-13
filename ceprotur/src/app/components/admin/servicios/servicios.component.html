@@ -9,7 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let service of servicesCreated; index as i">
+    <tr
+      *ngFor="let service of servicesCreated; index as i"
+      (click)="detailsService(service['id'])"
+    >
       <th scope="row">{{ i + 1 }}</th>
       <td>{{ service["username"] }}</td>
       <td>{{ service["serviceType"] }}</td>
