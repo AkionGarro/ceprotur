@@ -41,4 +41,7 @@ export class RegisterService {
   getServicesById(id: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'serviceById', id);
   }
+  getProceduresByPhase(phase: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'servicePhase', phase);
+  }
 }

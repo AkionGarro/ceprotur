@@ -28,6 +28,12 @@ class adminRegister():
         self.password = password
         self.telephone = telephone
 
+class phaseProcedure():
+    def __init__(self, phase, serviceId):
+        self.phase = phase
+        self.serviceId = serviceId
+
+
 
 
 class serviceAdd():
@@ -151,4 +157,13 @@ class firestoreService():
             print(f'{doc.id} => {doc.to_dict()}')
             services.append(doc.to_dict())
         return services
+
+    def getProcedures(self,phaseP):
+        docs = self.db.collection('phases').where("category","==",phaseP.phase).where("id","==",phaseP.serviceId).get()
+        phases = []
+        for doc in docs:
+            print(f'{doc.id} => {doc.to_dict()}')
+            phases.append(doc.to_dict())
+        return phases
+
 

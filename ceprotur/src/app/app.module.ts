@@ -21,6 +21,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { CreatedServicesComponent } from './components/created-services/created-services.component';
 import { ShowServiceDetailsComponent } from './components/show-service-details/show-service-details.component';
+import { PhaseViewComponent } from './components/phase-view/phase-view.component';
+import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { ShowServiceDetailsComponent } from './components/show-service-details/s
     ContactUsComponent,
     CreatedServicesComponent,
     ShowServiceDetailsComponent,
+    PhaseViewComponent,
+    NewProcedureComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { ShowServiceDetailsComponent } from './components/show-service-details/s
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatFormFieldModule,
+    provideStorage(() => getStorage()),
   ],
   providers: [],
   bootstrap: [AppComponent],

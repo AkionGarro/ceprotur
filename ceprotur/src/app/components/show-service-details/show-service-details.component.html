@@ -7,44 +7,42 @@
   <p>Service Type: {{ currentService["serviceType"] }}</p>
   <p>Company Description: {{ currentService["companyDescription"] }}</p>
 </div>
-<div>
+<div class="phases">
   <h2>Etapas de Servicio</h2>
   <div class="servicesBox">
     <div class="rowService">
       <div class="phase">
         <h3>Inicio</h3>
         <img src="../../../assets/etapaInicio.png" alt="" />
-        <button>Ir</button>
+        <button class="btn btn-info" (click)="goStart()">Ir</button>
       </div>
       <div class="phase">
         <h3>Planificacion</h3>
         <img src="../../../assets/etapaPlanif.png" alt="" />
-        <button>Ir</button>
+        <button class="btn btn-info" (click)="goPlanning()">Ir</button>
+      </div>
+      <div class="phase">
+        <h3>Evaluacion</h3>
+        <img src="../../../assets/etapaEvaluacion.png" alt="" />
+        <button class="btn btn-info" (click)="goEvaluation()">Ir</button>
       </div>
     </div>
 
     <div class="rowService">
       <div class="phase">
-        <h3>Evaluacion</h3>
-        <img src="../../../assets/etapaEvaluacion.png" alt="" />
-        <button>Ir</button>
-      </div>
-      <div class="phase">
         <h3>Negociacion</h3>
         <img src="../../../assets/etapaNegociacion.png" alt="" />
-        <button>Ir</button>
+        <button class="btn btn-info" (click)="goNegotiation()">Ir</button>
       </div>
-    </div>
-    <div class="rowService">
       <div class="phase">
         <h3>Ejeucion</h3>
         <img src="../../../assets/etapaEjecucion.png" alt="" />
-        <button>Ir</button>
+        <button class="btn btn-info" (click)="goExecution()">Ir</button>
       </div>
       <div class="phase">
         <h3>Cierre</h3>
         <img src="../../../assets/etapaCierre.png" alt="" />
-        <button>Ir</button>
+        <button class="btn btn-info" (click)="goClosure()">Ir</button>
       </div>
     </div>
   </div>
