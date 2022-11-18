@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, request, jsonify
 
-from firestore import firestoreService, userLogin, userRegister, serviceAdd, adminRegister, phaseProcedure
+from firestore import firestoreService, userLogin, userRegister, serviceAdd, adminRegister, phaseProcedure, procedure
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
@@ -97,6 +97,20 @@ def getPhaseProcedure():
     serviceId = serviceId[1:-1]
     phaseObj = phaseProcedure(phase,serviceId)
     res = fire.getProcedures(phaseObj)
+    return jsonify(res)
+
+
+
+@app.route('/newProcedure', methods=['POST', 'GET'])
+@cross_origin()
+def newProcedure():
+    fire = firestoreService()
+    category = request.form.get('category')
+    description = request.form.get('description')
+    id = request.form.get('id')
+    name = request.form.get('name')
+    phaseObj = procedure(id,name,category,description)
+    res = fire.addProcedure(phaseObj)
     return jsonify(res)
 
 app.run()
