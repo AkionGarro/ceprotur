@@ -108,6 +108,7 @@ def newProcedure():
     category = request.form.get('category')
     description = request.form.get('description')
     id = request.form.get('id')
+    id = id[1:-1]
     name = request.form.get('name')
     phaseObj = procedure(id,name,category,description)
     res = fire.addProcedure(phaseObj)

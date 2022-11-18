@@ -10,6 +10,9 @@
             type="text"
             formControlName="name"
             placeholder="Nombre del proceso"
+            [ngClass]="{
+              'is-invalid': submitted && formService.controls['name'].errors
+            }"
           />
         </div>
 
@@ -20,6 +23,10 @@
             name="comment"
             rows="4"
             cols="35"
+            [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['description'].errors
+            }"
           ></textarea>
         </div>
 
