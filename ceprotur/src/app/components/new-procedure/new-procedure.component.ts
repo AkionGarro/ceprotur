@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
 import Swal from 'sweetalert2';
+import { ref, Storage, uploadBytes } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-new-procedure',
@@ -17,7 +18,8 @@ export class NewProcedureComponent implements OnInit {
     private router: Router,
     private registerService: RegisterService,
     private formBuilder: FormBuilder,
-    private location: Location
+    private location: Location,
+    private storage: Storage
   ) {}
 
   ngOnInit(): void {
@@ -49,5 +51,14 @@ export class NewProcedureComponent implements OnInit {
         this.location.back();
       });
     }
+  }
+
+  uploadFile($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+    const fileRef = ref(this.storage, 'files/' + file.name);
+    uploadBytes(fileRef, file).then((snapshot) => {
+      console.log('Uploaded a blob or file!');
+    });
   }
 }

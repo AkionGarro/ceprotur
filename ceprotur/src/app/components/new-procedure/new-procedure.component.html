@@ -29,7 +29,7 @@
             }"
           ></textarea>
         </div>
-
+        <input type="file" (change)="uploadFile($event)" />
         <div>
           <button class="btnUsers" (ngSubmit)="onSubmit()">
             Enviar Solicitud
