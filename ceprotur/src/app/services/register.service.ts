@@ -44,4 +44,8 @@ export class RegisterService {
   getProceduresByPhase(phase: any): Observable<any> {
     return this.client.post(this.BASE_URL + 'servicePhase', phase);
   }
+
+  newPhaseProcedure(procedure: any): Observable<any> {
+    return this.client.post(this.BASE_URL + 'newProcedure', procedure);
+  }
 }

@@ -33,6 +33,14 @@ class phaseProcedure():
         self.phase = phase
         self.serviceId = serviceId
 
+class procedure():
+    def __init__(self, id,name,category,description):
+        self.id = id
+        self.name = name
+        self.category = category
+        self.description = description
+
+
 
 
 
@@ -165,5 +173,21 @@ class firestoreService():
             print(f'{doc.id} => {doc.to_dict()}')
             phases.append(doc.to_dict())
         return phases
+
+    def addProcedure(self,prod):
+        doc_ref = self.db.collection('phases').document()
+        doc_ref.set({
+            'category': prod.category,
+            'date': firestore.SERVER_TIMESTAMP,
+            'description': prod.description,
+            'id': prod.id,
+            'name': prod.name,
+            'status':'active',
+            'idProcedure': doc_ref.id,
+        })
+        res = {'result': 'Success',
+               'Id': doc_ref.id}
+        return res
+
 
 
