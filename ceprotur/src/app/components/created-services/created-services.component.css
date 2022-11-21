@@ -1,5 +1,30 @@
 .table {
   width: 80rem;
   margin: 3rem auto;
-  height: 30rem;
+  height: auto;
+}
+td:hover{
+  cursor: pointer;
+}
+tr:hover{
+  cursor: default;
+}
+
+tr{
+  /* height auto size */
+  height: auto;
+}
+.template{
+    margin: 0 auto;
+    height: auto;
+    text-transform: capitalize!important;
+    text-align: center;
+
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }

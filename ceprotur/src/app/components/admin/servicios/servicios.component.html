@@ -1,23 +1,52 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Desripcion Problema</th>
-      <th scope="col">Descripcion Empresa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let service of servicesCreated; index as i"
-      (click)="detailsService(service['id'])"
-    >
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ service["username"] }}</td>
-      <td>{{ service["serviceType"] }}</td>
-      <td>{{ service["serviceDescription"] }}</td>
-      <td>{{ service["companyDescription"] }}</td>
-    </tr>
-  </tbody>
-</table>
+<body>
+  <div class="row">
+    <!-- <mat-toolbar class="bg-transparent">
+      <div class="col-2">
+        <button mat-icon-button class="example-icon" [routerLink]="['../']">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="col-8 row1"></div>
+      <div class="col-2 right-content-options">
+        <button
+          mat-icon-button
+          class="right-options"
+          aria-label="Example icon-button with heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          class="right-options"
+          aria-label="Example icon-button with share icon"
+        >
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar> -->
+    <h1>Servicios</h1>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Desripcion Problema</th>
+        <th scope="col">Descripcion Empresa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let service of servicesCreated; index as i"
+        (click)="detailsService(service['id'])"
+      >
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ service["username"] }}</td>
+        <td>{{ service["serviceType"] }}</td>
+        <td>{{ service["serviceDescription"] }}</td>
+        <td>{{ service["companyDescription"] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>

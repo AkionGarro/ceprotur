@@ -10,10 +10,10 @@
             <mat-icon>person_add</mat-icon>
             <span>Añadir administrador</span>
           </button>
-          <button mat-menu-item [routerLink]="['./servicios']">
+          <!-- <button mat-menu-item [routerLink]="['./servicios']">
             <mat-icon>assignment</mat-icon>
             <span>Servicios</span>
-          </button>
+          </button> -->
           <button mat-menu-item [routerLink]="['../login']">
             <mat-icon>logout</mat-icon>
             <span>Cerrar sesión</span>
@@ -37,5 +37,8 @@
         </button>
       </mat-toolbar>
     </p>
+  </div>
+  <div class="row">
+    <app-servicios></app-servicios>
   </div>
 </div>

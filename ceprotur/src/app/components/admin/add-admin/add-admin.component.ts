@@ -41,6 +41,7 @@ export class AddAdminComponent implements OnInit {
     formData.append('username', this.formulario.value.username);
     formData.append('password', this.formulario.value.password);
     formData.append('telephone', this.formulario.value.telephone);
+    console.log(formData);
     this.registerService.registerAdmin(formData).subscribe((data) => {
       if (data != null) {
         alert('Usuario registrado');

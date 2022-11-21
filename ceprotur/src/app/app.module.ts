@@ -24,6 +24,8 @@ import { ShowServiceDetailsComponent } from './components/show-service-details/s
 import { PhaseViewComponent } from './components/phase-view/phase-view.component';
 import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    MatTabsModule,
+    MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,

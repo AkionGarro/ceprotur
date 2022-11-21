@@ -6,6 +6,6 @@
 .home {
   overflow: hidden;
   height: 100vh;
-  background: url("../../../assets/bg9.jpg");
+  background: linear-gradient(to right, rgb(100, 100, 155), rgb(113, 99, 99));
 
 }

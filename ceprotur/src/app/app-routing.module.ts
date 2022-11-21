@@ -10,6 +10,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { ShowServiceDetailsComponent } from './components/show-service-details/show-service-details.component';
 import { PhaseViewComponent } from './components/phase-view/phase-view.component';
 import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
+import { CreatedServicesComponent } from './components/created-services/created-services.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'home', component: HomeComponent },
   { path: 'create-service', component: CreateServiceComponent },
+  { path: 'created-services', component: CreatedServicesComponent },
   { path: 'aboutUs', component: AboutUsComponent },
   { path: 'contactUs', component: ContactUsComponent },
   { path: 'detailsService/:var', component: ShowServiceDetailsComponent },

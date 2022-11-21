@@ -16,6 +16,7 @@ export class CreatedServicesComponent implements OnInit {
   ngOnInit(): void {
     var formData: any = new FormData();
     formData.append('username', localStorage['localUser']);
+    console.log('USUARIOO -> ' , localStorage['localUser']);
     console.log(formData);
     this.service.getServices(formData).subscribe((res) => {
       console.log(res);

@@ -35,3 +35,34 @@ h3 {
   margin: 1rem 1rem 5rem 1rem;
   width: 7rem;
 }
+.page--title{
+  letter-spacing: 0;
+}
+.page--title{
+  text-transform: capitalize!important;
+  text-align: center;
+}
+.page--title{
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  
+}
+p, ul{
+  margin-left: 5rem;
+  margin-right: 5rem;
+}

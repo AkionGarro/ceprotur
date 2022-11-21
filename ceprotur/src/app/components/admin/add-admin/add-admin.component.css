@@ -1,8 +1,5 @@
 body {
-    background: url("../../../../assets/bg9.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(to right, rgb(100, 100, 155), rgb(113, 99, 99));
     overflow: hidden;
 }
 

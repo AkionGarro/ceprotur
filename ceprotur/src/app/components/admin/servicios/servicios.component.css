@@ -1,0 +1,20 @@
+body{
+    background: linear-gradient(to right, rgb(100, 100, 155), rgb(113, 99, 99));
+    overflow: hidden;
+}
+.right-content-options {
+    text-align: right;
+
+}
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+th{
+    cursor: default;
+}
+td{
+    cursor: pointer;
+}

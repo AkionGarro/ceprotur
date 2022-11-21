@@ -1,3 +1,4 @@
+<app-header></app-header>
 <table class="table">
   <thead>
     <tr>
@@ -20,4 +21,14 @@
       <td>{{ service["id"] }}</td>
     </tr>
   </tbody>
+  <!-- ng if template -->
+
+
 </table>
+<div *ngIf="servicesUSer.length == 0" class="row">
+  
+  <div class="col-12">
+    <h1 class="template">No hay servicios creados aún</h1>
+  </div>
+ 
+</div>

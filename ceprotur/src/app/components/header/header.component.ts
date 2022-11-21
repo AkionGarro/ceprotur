@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  user: any = localStorage;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.user);
   }
 
 }

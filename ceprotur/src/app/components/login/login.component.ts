@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
           if (data['access'] == 'admin') {
             this.router.navigate(['admin']);
           } else {
-            this.router.navigate(['home']);
+            this.router.navigate(['created-services']);
           }
         } else {
           alert('Error al iniciar sesión');

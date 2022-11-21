@@ -1,68 +1,100 @@
-<app-header></app-header>
-<div class="createdServices">
-  <app-created-services></app-created-services>
-</div>
-<div class="flex-center-center home">
-  <div class="users">
-    <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
-    <form [formGroup]="formService" (ngSubmit)="onSubmit()">
-      <div class="inputs">
-        <label class="labels"> SOLICITAR SERVICIO<br /></label>
+<body>
+
+  <div class="flex-center-center home">
+    <div class="users">
+      <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
+      <form [formGroup]="formService" (ngSubmit)="onSubmit()">
         <div class="inputs">
-          <label class="labels"> Descripción de la Empresa<br /></label>
-          <textarea
-            formControlName="companyDescription"
-            name="comment"
-            rows="4"
-            cols="35"
-            [ngClass]="{
+          <label class="labels"> SOLICITAR SERVICIO<br /></label>
+          <div class="inputs">
+            <label class="labels"> Descripción de la Empresa<br /></label>
+
+
+            <textarea formControlName="companyDescription" name="comment" rows="4" cols="35" [ngClass]="{
               'is-invalid':
                 submitted && formService.controls['companyDescription'].errors
-            }"
-          ></textarea>
-        </div>
+            }"></textarea>
+          </div>
 
-        <div class="inputs">
-          <label class="labels"> Descripción de Necesidades<br /></label>
-          <textarea
-            formControlName="serviceDescription"
-            name="comment"
-            rows="4"
-            cols="35"
-            [ngClass]="{
+          <div class="inputs">
+            <label class="labels"> Descripción de Necesidades<br /></label>
+            <textarea formControlName="serviceDescription" name="comment" rows="4" cols="35" [ngClass]="{
               'is-invalid':
                 submitted && formService.controls['serviceDescription'].errors
-            }"
-          ></textarea>
-        </div>
+            }"></textarea>
+          </div>
 
-        <div class="inputs">
-          <label for="lang">Tipo de Servicio<br /></label>
-          <br />
-          <select
-            name="servicio"
-            id="lang"
-            formControlName="serviceType"
-            [ngClass]="{
+          <div class="inputs">
+            <label for="lang">Tipo de Servicio<br /></label>
+            <br />
+            <select name="servicio" id="lang" formControlName="serviceType" [ngClass]="{
               'is-invalid':
                 submitted && formService.controls['serviceType'].errors
-            }"
-          >
-            <option value="Asesoria">Asesoría</option>
-            <option value="Consultoria">Consultoría</option>
-            <option value="Capacitacion">Capacitación</option>
-            <option value="Servicios Profesionales">
-              Contratación de Profesionales
-            </option>
-          </select>
+            }">
+              <option value="Asesoria">Asesoría</option>
+              <option value="Consultoria">Consultoría</option>
+              <option value="Capacitacion">Capacitación</option>
+              <option value="Servicios Profesionales">
+                Contratación de Profesionales
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <button class="btnUsers" (ngSubmit)="onSubmit()">
+              Enviar Solicitud
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <form [formGroup]="formService" (ngSubmit)="onSubmit()" class="form">
+
+      <!-- <mat-form-field class="form-element">
+        <mat-label>Descripción de la Empresa</mat-label>
+        <textarea matInput formControlName="companyDescription" name="comment" rows="4" cols="35" [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['companyDescription'].errors
+            }"></textarea>
+      </mat-form-field> -->
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Descripción de la Empresa" formControlName="name">
+        <mat-error *ngIf="formService.controls['name'].hasError('required')">
+          Descripción de la Empresa es requerido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <input matInput placeholder="Descripción de Necesidades" formControlName="email">
+        <mat-error *ngIf="formService.controls['email'].hasError('required')">
+          Descripción de Necesidades es requerido</mat-error>
+      
+      </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input matInput placeholder="Tipo de Servicio" formControlName="phone">
+          <mat-error *ngIf="formService.controls['phone'].hasError('required')">
+            Tipo de Servicio es requerido</mat-error>
+        </mat-form-field>
+
+        <div class="form-element">
+          <mat-checkbox formControlName="validate" value="1">Name min. 3 characters</mat-checkbox>
         </div>
 
-        <div>
-          <button class="btnUsers" (ngSubmit)="onSubmit()">
-            Enviar Solicitud
-          </button>
+        <div class="form-element">
+          <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!formService.valid">Submit
+            Form</button>
         </div>
-      </div>
+
     </form>
   </div>
-</div>
+
+  <!-- <ng-template #forminfo>
+    <div class="container">
+      {{ post | json }}
+    </div>
+  </ng-template> -->
+</body>
