@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
-import {MatDatepickerInputEvent} from '@angular/material/datepicker';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-phase-view',
@@ -14,11 +14,18 @@ export class PhaseViewComponent implements OnInit {
   fecha: any;
   msj = 'Agendar reunión';
   hora: any;
-  agendar= false;
+  agendar = false;
   events: string[] = [];
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
-    let agenda = type + ': ' + event.value?.getDate() + '/' + (Number(event.value?.getMonth()) + 1) + '/' + event.value?.getFullYear();
+    let agenda =
+      type +
+      ': ' +
+      event.value?.getDate() +
+      '/' +
+      (Number(event.value?.getMonth()) + 1) +
+      '/' +
+      event.value?.getFullYear();
     this.events.pop;
     this.fecha = agenda;
     console.log(agenda);
@@ -48,16 +55,16 @@ export class PhaseViewComponent implements OnInit {
     this.router.navigate(['/newProcedure']);
   }
 
-  agendarR(){
+  agendarR() {
     this.agendar = !this.agendar;
-    if(this.msj == 'Agendar reunión'){
+    if (this.msj == 'Agendar reunión') {
       this.msj = 'Terminar de agendar';
-    }else{
+    } else {
       this.msj = 'Agendar reunión';
     }
   }
 
-  addAgenda(hora: any){
+  addAgenda(hora: any) {
     this.events.push(`${this.fecha} - Hora: ${hora.value}`);
 
     // var formData: any = new FormData();
@@ -67,5 +74,10 @@ export class PhaseViewComponent implements OnInit {
     // this.service.addAgenda(formData).subscribe((res) => {
     //   console.log(res);
     // });
+  }
+  detailsProcedure(id: any) {
+    localStorage.setItem('currentProcedureId', id);
+    console.log(id);
+    this.router.navigate(['/detailsProcedure', id]);
   }
 }

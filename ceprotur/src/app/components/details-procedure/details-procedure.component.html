@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div>
+  <h1 class="page--title">Detalles del procedimiento</h1>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title
+          ><strong>Etapa de servicio</strong>:
+          {{ currentProcedure["category"] }}</mat-card-title
+        >
+        <mat-card-subtitle
+          ><strong>ID del servicio</strong>:
+          {{ currentProcedure["idProcedure"] }}</mat-card-subtitle
+        >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-label>
+        <p><strong>Nombre</strong>: {{ currentProcedure["name"] }}</p>
+      </mat-label>
+      <mat-label>
+        <p><strong>Creación</strong>: {{ currentProcedure["date"] }}</p>
+      </mat-label>
+      <mat-label>
+        <p>
+          <strong>Descripción </strong>:
+          {{ currentProcedure["description"] }}
+        </p>
+      </mat-label>
+      <mat-label>
+        <p>
+          <strong>Estado</strong>:
+          {{ currentProcedure["status"] }}
+        </p>
+      </mat-label>
+    </mat-card-content>
+  </mat-card>
+</div>

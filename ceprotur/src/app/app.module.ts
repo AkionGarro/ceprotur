@@ -23,13 +23,14 @@ import { CreatedServicesComponent } from './components/created-services/created-
 import { ShowServiceDetailsComponent } from './components/show-service-details/show-service-details.component';
 import { PhaseViewComponent } from './components/phase-view/phase-view.component';
 import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
-import { provideStorage,getStorage } from '@angular/fire/storage';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatCardModule} from '@angular/material/card';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { DetailsProcedureComponent } from './components/details-procedure/details-procedure.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {MatCardModule} from '@angular/material/card';
     ShowServiceDetailsComponent,
     PhaseViewComponent,
     NewProcedureComponent,
+    DetailsProcedureComponent,
   ],
   imports: [
     BrowserModule,

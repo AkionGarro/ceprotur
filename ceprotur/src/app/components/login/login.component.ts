@@ -9,6 +9,7 @@ import {
 import { Service } from 'src/app/models/service';
 import { RegisterService } from 'src/app/services/register.service';
 import { userLogin } from 'src/app/models/usuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
     var formData: any = new FormData();
 
     if (this.formlogin.invalid) {
-      alert('Error al iniciar sesión');
+      Swal.fire('Intente nuevamente', 'Error iniciar sesión', 'error');
       return;
     } else {
       formData.append('name', this.formlogin.value.user);

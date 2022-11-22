@@ -113,5 +113,14 @@ def newProcedure():
     phaseObj = procedure(id,name,category,description)
     res = fire.addProcedure(phaseObj)
     return jsonify(res)
+@app.route('/procedureById', methods=['POST', 'GET'])
+@cross_origin()
+def getProcedureById():
+    fire = firestoreService()
+    idProd = request.form.get('idProcedure')
+    res = fire.getProcedureId(idProd)
+    return jsonify(res)
+
+
 
 app.run()

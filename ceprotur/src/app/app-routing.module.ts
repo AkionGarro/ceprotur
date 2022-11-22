@@ -11,6 +11,7 @@ import { ShowServiceDetailsComponent } from './components/show-service-details/s
 import { PhaseViewComponent } from './components/phase-view/phase-view.component';
 import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
 import { CreatedServicesComponent } from './components/created-services/created-services.component';
+import { DetailsProcedureComponent } from './components/details-procedure/details-procedure.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'detailsService/:var', component: ShowServiceDetailsComponent },
   { path: 'phaseView/:var', component: PhaseViewComponent },
   { path: 'newProcedure', component: NewProcedureComponent },
+  { path: 'detailsProcedure/:var', component: DetailsProcedureComponent },
 ];
 
 @NgModule({

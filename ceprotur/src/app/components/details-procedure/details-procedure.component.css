@@ -1,0 +1,84 @@
+img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+h2,
+h3 {
+  text-align: center;
+  font-weight: 900;
+}
+.example-card {
+  max-width: 40rem;
+  margin-bottom: 4rem;
+  margin: 0 auto;
+  background-color: rgba(86, 103, 118, 0.269);
+  border-radius: 10px;
+  border: 1px solid #555;
+  color: #000;
+}
+.servicesBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+mat-card-title-group,
+mat-card-title,
+mat-card-subtitle,
+mat-card-header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.rowService {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+
+.phase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.phases {
+  padding-bottom: 2rem;
+}
+.btn-info {
+  margin: 1rem 1rem 5rem 1rem;
+  width: 7rem;
+}
+.page--title {
+  letter-spacing: 0;
+}
+.page--title {
+  text-transform: capitalize !important;
+  text-align: center;
+}
+.page--title {
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+p,
+ul {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}

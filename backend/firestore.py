@@ -20,6 +20,7 @@ class userRegister():
         self.telephone = telephone
         self.tourismSector = tourismSector
 
+
 class adminRegister():
     def __init__(self, name, email, username, password, telephone):
         self.name = name
@@ -28,20 +29,19 @@ class adminRegister():
         self.password = password
         self.telephone = telephone
 
+
 class phaseProcedure():
     def __init__(self, phase, serviceId):
         self.phase = phase
         self.serviceId = serviceId
 
+
 class procedure():
-    def __init__(self, id,name,category,description):
+    def __init__(self, id, name, category, description):
         self.id = id
         self.name = name
         self.category = category
         self.description = description
-
-
-
 
 
 class serviceAdd():
@@ -77,7 +77,7 @@ class firestoreService():
                 'address': user.address,
                 'telephone': user.telephone,
                 'tourismSector': user.tourismSector,
-                'access':'user'
+                'access': 'user'
             })
             res = {'result': 'Sucess'}
             return res
@@ -95,7 +95,7 @@ class firestoreService():
                 'username': user.username,
                 'password': user.password,
                 'telephone': user.telephone,
-                'access':'admin'
+                'access': 'admin'
             })
             res = {'result': 'Sucess'}
             return res
@@ -138,7 +138,7 @@ class firestoreService():
             'created': firestore.SERVER_TIMESTAMP
         })
         res = {'result': 'Success',
-                'Id': doc_ref.id }
+               'Id': doc_ref.id}
         return res
 
     def getUserServices(self, username):
@@ -158,7 +158,6 @@ class firestoreService():
             print('No se encuentra el usuario')
             return None;
 
-
     def getAdminServices(self):
         docs = self.db.collection('services').get()
         services = []
@@ -167,15 +166,16 @@ class firestoreService():
             services.append(doc.to_dict())
         return services
 
-    def getProcedures(self,phaseP):
-        docs = self.db.collection('phases').where("category","==",phaseP.phase).where("id","==",phaseP.serviceId).get()
+    def getProcedures(self, phaseP):
+        docs = self.db.collection('phases').where("category", "==", phaseP.phase).where("id", "==",
+                                                                                        phaseP.serviceId).get()
         phases = []
         for doc in docs:
             print(f'{doc.id} => {doc.to_dict()}')
             phases.append(doc.to_dict())
         return phases
 
-    def addProcedure(self,prod):
+    def addProcedure(self, prod):
         doc_ref = self.db.collection('phases').document()
         doc_ref.set({
             'category': prod.category,
@@ -183,12 +183,21 @@ class firestoreService():
             'description': prod.description,
             'id': prod.id,
             'name': prod.name,
-            'status':'active',
+            'status': 'active',
             'idProcedure': doc_ref.id,
         })
         res = {'result': 'Success',
                'Id': doc_ref.id}
         return res
+
+    def getProcedureId(self, id):
+        docs = self.db.collection('phases').where("idProcedure", "==", id).get()
+        if docs != []:
+            procedure = docs[0].to_dict()
+            return procedure
+        else:
+            print('No se encuentra')
+            return None;
 
 
 

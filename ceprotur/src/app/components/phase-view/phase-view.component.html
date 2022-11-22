@@ -1,3 +1,4 @@
+<app-header></app-header>
 <table class="table">
   <thead>
     <tr>
@@ -6,31 +7,41 @@
       <th scope="col">Descripcion</th>
       <th scope="col">Estado</th>
       <th scope="col">Fecha</th>
-      <th scope="col">Id</th>
+      <th scope="col">Id Procedimiento</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let prod of procedures; index as i">
+    <tr
+      *ngFor="let prod of procedures; index as i"
+      (click)="detailsProcedure(prod['idProcedure'])"
+    >
       <td scope="row">{{ i + 1 }}</td>
       <td>{{ prod["name"] }}</td>
       <td>{{ prod["description"] }}</td>
       <td>{{ prod["status"] }}</td>
       <td>{{ prod["date"] }}</td>
-      <td>{{ prod["id"] }}</td>
+      <td>{{ prod["idProcedure"] }}</td>
     </tr>
   </tbody>
 </table>
 <div class="d-flex justify-content-">
-  <button class="btn btn-success" mat-raised-button (click)="newProcedure()">Agregar información</button>
-  <button class="btn btn-info" mat-raised-button (click)="agendarR()">{{ msj }}</button>
+  <button class="btn btn-success" mat-raised-button (click)="newProcedure()">
+    Agregar información
+  </button>
+  <button class="btn btn-info" mat-raised-button (click)="agendarR()">
+    {{ msj }}
+  </button>
   <button mat-raised-button color="warn">Finalizar grupo de proceso</button>
 </div>
 
-<div *ngIf="agendar==true" class="row agender">
+<div *ngIf="agendar == true" class="row agender">
   <mat-form-field appearance="fill" class="calendar">
     <mat-label>Seleccione la fecha para la reunión</mat-label>
-    <input matInput [matDatepicker]="picker"
-           (dateInput)="addEvent('Fecha de reunión', $event)">
+    <input
+      matInput
+      [matDatepicker]="picker"
+      (dateInput)="addEvent('Fecha de reunión', $event)"
+    />
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -38,16 +49,21 @@
   <p>
     <mat-form-field appearance="fill" class="hora">
       <mat-label>Ingrese la hora de la reunión</mat-label>
-      <input matInput placeholder="1:30 PM" #valueHora>
+      <input matInput placeholder="1:30 PM" #valueHora />
       <mat-icon matSuffix>schedule</mat-icon>
-
     </mat-form-field>
   </p>
   <div class="row">
-    <button class="btn btn-info agendar" mat-raised-button (click)="addAgenda(valueHora)">Agregar</button>
+    <button
+      class="btn btn-info agendar"
+      mat-raised-button
+      (click)="addAgenda(valueHora)"
+    >
+      Agregar
+    </button>
   </div>
-  
+
   <div class="row example-events">
-    <div *ngFor="let e of events">{{e}}</div>
+    <div *ngFor="let e of events">{{ e }}</div>
   </div>
 </div>

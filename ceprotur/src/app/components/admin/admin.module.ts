@@ -13,11 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiciosComponent } from './servicios/servicios.component';
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    AddAdminComponent,
-    ServiciosComponent
-  ],
+  declarations: [AdminComponent, AddAdminComponent, ServiciosComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -27,7 +23,6 @@ import { ServiciosComponent } from './servicios/servicios.component';
     MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
-    
-  ]
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}
