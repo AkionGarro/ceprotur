@@ -6,31 +6,31 @@
       <mat-card-title-group>
         <mat-card-title
           ><strong>Etapa de servicio</strong>:
-          {{ currentProcedure["category"] }}</mat-card-title
+          {{ this.currentProcedure["category"] }}</mat-card-title
         >
         <mat-card-subtitle
           ><strong>ID del servicio</strong>:
-          {{ currentProcedure["idProcedure"] }}</mat-card-subtitle
+          {{ this.currentProcedure["idProcedure"] }}</mat-card-subtitle
         >
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
       <mat-label>
-        <p><strong>Nombre</strong>: {{ currentProcedure["name"] }}</p>
+        <p><strong>Nombre</strong>: {{ this.currentProcedure["name"] }}</p>
       </mat-label>
       <mat-label>
-        <p><strong>Creación</strong>: {{ currentProcedure["date"] }}</p>
+        <p><strong>Creación</strong>: {{ this.currentProcedure["date"] }}</p>
       </mat-label>
       <mat-label>
         <p>
           <strong>Descripción </strong>:
-          {{ currentProcedure["description"] }}
+          {{ this.currentProcedure["description"] }}
         </p>
       </mat-label>
       <mat-label>
         <p>
           <strong>Estado</strong>:
-          {{ currentProcedure["status"] }}
+          {{ this.currentProcedure["status"] }}
         </p>
       </mat-label>
     </mat-card-content>
@@ -41,4 +41,30 @@
       </button>
     </div>
   </mat-card>
+</div>
+<div class="fileTable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of files">
+        <td>{{ file.name }}</td>
+
+        <td>
+          <button
+            class="btn btn-primary"
+            mat-raised-button
+            (click)="openFile(file)"
+          >
+            Abrir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

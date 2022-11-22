@@ -82,3 +82,7 @@ ul {
   margin-left: 5rem;
   margin-right: 5rem;
 }
+.fileTable {
+  width: 40vw;
+  margin: 2rem auto;
+}

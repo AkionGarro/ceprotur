@@ -9,7 +9,7 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class ShowServiceDetailsComponent implements OnInit {
   id: any;
-  currentService: any;
+  currentService: any = new Object();
   constructor(
     private route: ActivatedRoute,
     public service: RegisterService,
