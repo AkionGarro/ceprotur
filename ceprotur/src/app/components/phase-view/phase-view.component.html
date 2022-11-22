@@ -25,8 +25,8 @@
   </tbody>
 </table>
 <div class="upfile d-flex justify-content-">
-  <button class="btn btn-success" mat-raised-button (click)="newProcedure()">
-    Agregar información
+  <button class="btn btn-success" mat-raised-button (click)="newProcedure()" *ngIf="screen.isUser==false">
+    Crear Procedimiento
   </button>
   <button class="btn btn-info" mat-raised-button (click)="agendarR()" *ngIf="screen.isUser==false">
     {{ msj }}

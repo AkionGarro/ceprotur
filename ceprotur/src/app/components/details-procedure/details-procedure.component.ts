@@ -9,6 +9,7 @@ import {
   listAll,
 } from '@angular/fire/storage';
 import Swal from 'sweetalert2';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 @Component({
   selector: 'app-details-procedure',
   templateUrl: './details-procedure.component.html',
@@ -24,7 +25,8 @@ export class DetailsProcedureComponent implements OnInit {
     private route: ActivatedRoute,
     public service: RegisterService,
     private storage: Storage,
-    private router: Router
+    private router: Router,
+    public screen: ScreenSizeService
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +62,11 @@ export class DetailsProcedureComponent implements OnInit {
       uploadBytes(this.fileRef, this.file).then((snapshot) => {
         console.log(snapshot);
         Swal.fire({ icon: 'success', title: 'Archivo subido' });
-        this.router.navigate(['/created-services']);
+        if(this.screen.isUser){
+          this.router.navigate(['/user']);
+        }else{
+          this.router.navigate(['/admin']);
+        }
       });
     }
   }
