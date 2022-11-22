@@ -26,6 +26,9 @@ import { NewProcedureComponent } from './components/new-procedure/new-procedure.
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -45,8 +48,11 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatNativeDateModule,
     NgbModule,
     MatTabsModule,
+    MatInputModule,
+    MatDatepickerModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,

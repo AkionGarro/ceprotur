@@ -22,5 +22,30 @@
 </table>
 <div class="d-flex justify-content-">
   <button class="btn btn-success" mat-raised-button (click)="newProcedure()">Agregar información</button>
+  <button class="btn btn-info" mat-raised-button (click)="agendarR()">{{ msj }}</button>
   <button mat-raised-button color="warn">Finalizar grupo de proceso</button>
+</div>
+
+<div *ngIf="agendar==true" class="row">
+  <mat-form-field appearance="fill" class="calendar">
+    <mat-label>Seleccione la fecha para la reunión</mat-label>
+    <input matInput [matDatepicker]="picker"
+           (dateInput)="addEvent('Fecha de reunión', $event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <p>
+    <mat-form-field appearance="fill" class="hora">
+      <mat-label>Ingrese la hora de la reunión</mat-label>
+      <input matInput placeholder="1:30 PM" #valueHora>
+      <mat-icon matSuffix>schedule</mat-icon>
+
+    </mat-form-field>
+  </p>
+  <button class="btn btn-info agendar" mat-raised-button (click)="addAgenda(valueHora)">Agregar</button>
+  
+  <div class="example-events">
+    <div *ngFor="let e of events">{{e}}</div>
+  </div>
 </div>

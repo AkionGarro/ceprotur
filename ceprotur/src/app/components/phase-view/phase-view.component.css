@@ -4,3 +4,28 @@ button {
   display: block;
   margin: 0 auto;
 }
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+.calendar {
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.hora {
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+
+}
+p{
+  text-align: center;
+  margin: 0 auto;
+}
+.agendar{
+  margin: 0 auto;
+  text-align: center;
+  width: 10rem;
+  margin-bottom: 1rem;
+}

@@ -56,6 +56,7 @@ class firestoreService():
 
     def __init__(self):
         self.cred = credentials.Certificate('ceprotur-firebase-adminsdk-xvjjf-a97121250f.json')
+        
         try:
             self.app = firebase_admin.get_app()
         except ValueError:
