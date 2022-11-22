@@ -37,3 +37,14 @@ a:hover{
   /* text */
 
 }
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+.home {
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(100, 100, 155), rgb(113, 99, 99));
+
+}

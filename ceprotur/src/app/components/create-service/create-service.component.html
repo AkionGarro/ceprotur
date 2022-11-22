@@ -1,67 +1,55 @@
 <body>
-  <div class="flex-center-center home">
-    <div class="users">
-      <img src="../../../assets/logo_ceproturr.png" alt="" class="logo" />
-      <form [formGroup]="formService" (ngSubmit)="onSubmit()">
-        <div class="inputs">
-          <label class="labels"> SOLICITAR SERVICIO<br /></label>
-          <div class="inputs">
-            <label class="labels"> Descripción de la Empresa<br /></label>
+  <div class="container">
+    <div class="row">
+      <div></div>
+      <!-- <img id="postcard" src="http://upload.wikimedia.org/wikipedia/commons/6/6d/FolliesBergereBoxCostume.jpg" alt="postcard" class="img-responsive move"> -->
+      <div id="content">
+        <h1> SOLICITAR SERVICIO </h1>
 
-            <textarea
-              formControlName="companyDescription"
-              name="comment"
-              rows="4"
-              cols="35"
-              [ngClass]="{
-                'is-invalid':
-                  submitted && formService.controls['companyDescription'].errors
-              }"
-            ></textarea>
+        <form [formGroup]="formService" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="message" class="iconic comment"> Descripción de la empresa <span
+                class="required">*</span></label>
+            <textarea name="message" formControlName="companyDescription" [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['companyDescription'].errors
+            }" id="message" class="form-control" rows="3"
+              placeholder="Descripción de la empresa"
+              required="required"></textarea>
           </div>
-
-          <div class="inputs">
-            <label class="labels"> Descripción de Necesidades<br /></label>
-            <textarea
-              formControlName="serviceDescription"
-              name="comment"
-              rows="4"
-              cols="35"
-              [ngClass]="{
-                'is-invalid':
-                  submitted && formService.controls['serviceDescription'].errors
-              }"
-            ></textarea>
+          <div class="form-group">
+            <label for="message" class="iconic needs"> Descripción de las necesidades <span
+                class="required">*</span></label>
+            <textarea formControlName="serviceDescription" [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['serviceDescription'].errors
+            }" name="message" id="message" class="form-control" rows="3"
+              placeholder="Descripción de las necesidades"
+              required="required"></textarea>
           </div>
-
-          <div class="inputs">
-            <label for="lang">Tipo de Servicio<br /></label>
-            <br />
-            <select
-              name="servicio"
-              id="lang"
-              formControlName="serviceType"
-              [ngClass]="{
-                'is-invalid':
-                  submitted && formService.controls['serviceType'].errors
-              }"
-            >
-              <option value="Asesoria">Asesoría</option>
-              <option value="Consultoria">Consultoría</option>
-              <option value="Capacitacion">Capacitación</option>
-              <option value="Servicios Profesionales">
-                Contratación de Profesionales
-              </option>
-            </select>
+          <div class="form-group">
+            <label for="message" class="iconic type"> Tipo de servicio <span
+              class="required">*</span></label>
+            <select formControlName="serviceType" [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['serviceType'].errors
+            }" name="message" required="required" id="message" class="form-control" rows="3" formControlName="serviceType" [ngClass]="{
+              'is-invalid':
+                submitted && formService.controls['serviceType'].errors
+            }">
+            <option value="Asesoría">Asesoría</option>
+            <option value="Consultoría">Consultoría</option>
+            <option value="Capacitación">Capacitación</option>
+            <option value="Servicios Profesionales">
+              Contratación de Profesionales
+            </option>
+          </select>
           </div>
-
-          <div>
-            <button class="btnUsers" (ngSubmit)="onSubmit()">
-              Enviar Solicitud
-            </button>
-          </div>
-        </div>
-      </form>
+          
+          <input type="submit" class="input" value=" ★  Enviar solicitud " />
+        </form>
+      </div>
     </div>
+
   </div>
 </body>

@@ -8,6 +8,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 export class ScreenSizeService {
 
   screenSize: boolean = false;
+  public isUser: boolean = false;
 
   constructor(private breakpointObserver: BreakpointObserver) { 
     // detect screen size changes

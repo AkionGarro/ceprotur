@@ -32,7 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { DetailsProcedureComponent } from './components/details-procedure/details-procedure.component';
 import { ChatComponent } from './components/chat/chat.component';
-
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +53,7 @@ import { ChatComponent } from './components/chat/chat.component';
   ],
   imports: [
     BrowserModule,
+    MatMenuModule,
     MatCardModule,
     AppRoutingModule,
     MatNativeDateModule,

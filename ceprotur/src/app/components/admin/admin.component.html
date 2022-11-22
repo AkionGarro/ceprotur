@@ -14,7 +14,7 @@
             <mat-icon>assignment</mat-icon>
             <span>Servicios</span>
           </button> -->
-          <button mat-menu-item [routerLink]="['../login']">
+          <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
             <span>Cerrar sesión</span>
           </button>

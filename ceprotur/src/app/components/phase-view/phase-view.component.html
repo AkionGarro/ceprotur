@@ -28,10 +28,10 @@
   <button class="btn btn-success" mat-raised-button (click)="newProcedure()">
     Agregar información
   </button>
-  <button class="btn btn-info" mat-raised-button (click)="agendarR()">
+  <button class="btn btn-info" mat-raised-button (click)="agendarR()" *ngIf="screen.isUser==false">
     {{ msj }}
   </button>
-  <button mat-raised-button color="warn">Finalizar grupo de proceso</button>
+  <button mat-raised-button color="warn" *ngIf="screen.isUser==false">Finalizar grupo de proceso</button>
 </div>
 
 <div *ngIf="agendar == true" class="row agender">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
   selector: 'app-phase-view',
@@ -34,7 +35,8 @@ export class PhaseViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public service: RegisterService,
-    private router: Router
+    private router: Router,
+    public screen: ScreenSizeService
   ) {}
 
   ngOnInit(): void {
