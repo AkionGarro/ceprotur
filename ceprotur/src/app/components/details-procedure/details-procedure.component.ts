@@ -62,6 +62,7 @@ export class DetailsProcedureComponent implements OnInit {
       uploadBytes(this.fileRef, this.file).then((snapshot) => {
         console.log(snapshot);
         Swal.fire({ icon: 'success', title: 'Archivo subido' });
+        this.getFiles();
         if(this.screen.isUser){
           this.router.navigate(['/user']);
         }else{
@@ -72,6 +73,7 @@ export class DetailsProcedureComponent implements OnInit {
   }
 
   getFiles() {
+    this.files = [];
     var url =
       'services/' +
       localStorage['currentServiceId'].slice(1, -1) +
