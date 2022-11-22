@@ -1,11 +1,28 @@
 <div>
   <h1 class="page--title">Detalles del servicio</h1>
-  <p><strong>ID del servicio</strong>: {{ currentService["id"] }}</p>
-  <p><strong>Nombre de usuario</strong>: {{ currentService["username"] }}</p>
-  <p><strong>Creación</strong>: {{ currentService["created"] }}</p>
-  <p><strong>Descripción del servicio</strong>: {{ currentService["serviceDescription"] }}</p>
-  <p><strong>Tipo de servicio</strong>: {{ currentService["serviceType"] }}</p>
-  <p><strong>Descripción de la compañia</strong>: {{ currentService["companyDescription"] }}</p>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title><strong>Tipo de servicio</strong>: {{ currentService["serviceType"] }}</mat-card-title>
+        <mat-card-subtitle><strong>ID del servicio</strong>: {{ currentService["id"] }}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-label>
+        <p><strong>Nombre de usuario</strong>: {{ currentService["username"] }}</p>
+      </mat-label>
+      <mat-label>
+        <p><strong>Creación</strong>: {{ currentService["created"] }}</p>
+      </mat-label>
+      <mat-label>
+        <p><strong>Descripción del servicio</strong>: {{ currentService["serviceDescription"] }}</p>
+      </mat-label>
+      <mat-label>
+        <p><strong>Descripción de la compañia</strong>: {{ currentService["companyDescription"] }}</p>
+      </mat-label>
+    </mat-card-content>
+  </mat-card>
+  
 </div>
 <div class="phases">
   <h2>Etapas de Servicio</h2>

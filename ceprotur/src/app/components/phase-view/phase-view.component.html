@@ -26,7 +26,7 @@
   <button mat-raised-button color="warn">Finalizar grupo de proceso</button>
 </div>
 
-<div *ngIf="agendar==true" class="row">
+<div *ngIf="agendar==true" class="row agender">
   <mat-form-field appearance="fill" class="calendar">
     <mat-label>Seleccione la fecha para la reunión</mat-label>
     <input matInput [matDatepicker]="picker"
@@ -43,9 +43,11 @@
 
     </mat-form-field>
   </p>
-  <button class="btn btn-info agendar" mat-raised-button (click)="addAgenda(valueHora)">Agregar</button>
+  <div class="row">
+    <button class="btn btn-info agendar" mat-raised-button (click)="addAgenda(valueHora)">Agregar</button>
+  </div>
   
-  <div class="example-events">
+  <div class="row example-events">
     <div *ngFor="let e of events">{{e}}</div>
   </div>
 </div>
