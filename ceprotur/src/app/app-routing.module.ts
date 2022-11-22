@@ -12,6 +12,7 @@ import { PhaseViewComponent } from './components/phase-view/phase-view.component
 import { NewProcedureComponent } from './components/new-procedure/new-procedure.component';
 import { CreatedServicesComponent } from './components/created-services/created-services.component';
 import { DetailsProcedureComponent } from './components/details-procedure/details-procedure.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'create-service', component: CreateServiceComponent },
   { path: 'created-services', component: CreatedServicesComponent },
   { path: 'aboutUs', component: AboutUsComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'contactUs', component: ContactUsComponent },
   { path: 'detailsService/:var', component: ShowServiceDetailsComponent },
   { path: 'phaseView/:var', component: PhaseViewComponent },
