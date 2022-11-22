@@ -1,41 +1,38 @@
+<app-header></app-header>
 <div class="flex-center-center home">
-  <div class="users">
-    <form [formGroup]="formService" (ngSubmit)="onSubmit()">
-      <div class="inputs">
-        <label class="labels"> Nuevo Proceso de Servicio<br /></label>
 
-        <div class="inputs">
-          <label class="labels"> Nombre</label>
-          <input
-            type="text"
-            formControlName="name"
-            placeholder="Nombre del proceso"
-            [ngClass]="{
+  <div class="container">
+    <div class="row">
+      <div></div>
+      <!-- <img id="postcard" src="http://upload.wikimedia.org/wikipedia/commons/6/6d/FolliesBergereBoxCostume.jpg" alt="postcard" class="img-responsive move"> -->
+      <div id="content">
+        <h1> Nuevo Proceso de Servicio </h1>
+
+        <form [formGroup]="formService" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="message" class="iconic comment"> Nombre <span
+                class="required">*</span></label>
+            <input type="text" name="message" formControlName="name" [ngClass]="{
               'is-invalid': submitted && formService.controls['name'].errors
-            }"
-          />
-        </div>
-
-        <div class="inputs">
-          <label class="labels"> Descripción del proceso<br /></label>
-          <textarea
-            formControlName="description"
-            name="comment"
-            rows="4"
-            cols="35"
-            [ngClass]="{
+            }" id="message" class="form-control" rows="3"
+              placeholder="Nombre del proceso"
+              required="required">
+          </div>
+          <div class="form-group">
+            <label for="message" class="iconic needs"> Descripción del proceso <span
+                class="required">*</span></label>
+            <textarea formControlName="description" [ngClass]="{
               'is-invalid':
                 submitted && formService.controls['description'].errors
-            }"
-          ></textarea>
-        </div>
-
-        <div>
-          <button class="btnUsers" (ngSubmit)="onSubmit()">
-            Enviar Solicitud
-          </button>
-        </div>
+            }" name="message" id="message" class="form-control" rows="3"
+              placeholder="Descripción del proceso"
+              required="required"></textarea>
+          </div>
+          
+          
+          <input type="submit" class="input" value=" ★  Crear Proceso " />
+        </form>
       </div>
-    </form>
-  </div>
+    </div>
+
 </div>

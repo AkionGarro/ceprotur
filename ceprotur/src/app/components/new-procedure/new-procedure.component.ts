@@ -44,7 +44,7 @@ export class NewProcedureComponent implements OnInit {
         .newPhaseProcedure(formData)
         .subscribe((res) => {
           Swal.fire(
-            'Petición creada con exito',
+            'Proceso creado con éxito',
             'ID:' + res['idProcedure'],
             'success'
           );
