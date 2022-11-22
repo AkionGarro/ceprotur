@@ -30,11 +30,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ChatComponent,
     HeaderComponent,
     RegisterComponent,
     HomeComponent,
@@ -45,6 +47,7 @@ import {MatCardModule} from '@angular/material/card';
     ShowServiceDetailsComponent,
     PhaseViewComponent,
     NewProcedureComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
