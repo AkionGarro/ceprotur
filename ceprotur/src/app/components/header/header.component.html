@@ -7,6 +7,7 @@
     
     <div class="collapse navbar-collapse header" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
         <li class="nav-item">
           <button mat-icon-button class="logout" title="Cerrar sesión" (click)="logout()">
             <mat-icon>logout</mat-icon>
@@ -58,6 +59,10 @@
           <mat-icon>assignment</mat-icon>
           <span>Servicios</span>
         </button> -->
+        <button mat-menu-item [routerLink]="['../../chat']">
+          <mat-icon>chat</mat-icon>
+          <span>Chat</span>
+        </button>
         <button mat-menu-item (click)="logout()">
           <mat-icon>logout</mat-icon>
           <span>Cerrar sesión</span>
