@@ -4,12 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from 'src/app/services/register.service';
 import Swal from 'sweetalert2';
-import {
-  ref,
-  Storage,
-  uploadBytes,
-  getDownloadURL,
-} from '@angular/fire/storage';
 
 @Component({
   selector: 'app-new-procedure',
@@ -19,12 +13,12 @@ import {
 export class NewProcedureComponent implements OnInit {
   formService!: FormGroup;
   submitted = false;
+  file: any;
+  fileRef: any;
   constructor(
-    private router: Router,
     private registerService: RegisterService,
     private formBuilder: FormBuilder,
-    private location: Location,
-    private storage: Storage
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -46,24 +40,18 @@ export class NewProcedureComponent implements OnInit {
       formData.append('id', localStorage['currentServiceId']);
       formData.append('category', localStorage['currentPhase']);
 
-      this.registerService.newPhaseProcedure(formData).subscribe((res) => {
-        Swal.fire(
-          'Petición creada con exito',
-          'ID:' + res['idProcedure'],
-          'success'
-        );
-        console.log(res);
-        this.location.back();
-      });
+      this.registerService
+        .newPhaseProcedure(formData)
+        .subscribe((res) => {
+          Swal.fire(
+            'Petición creada con exito',
+            'ID:' + res['idProcedure'],
+            'success'
+          );
+          console.log(res);
+          this.location.back();
+        })
+        .add(() => {});
     }
-  }
-
-  uploadFile($event: any) {
-    const file = $event.target.files[0];
-    console.log(file);
-    const fileRef = ref(this.storage, 'files/' + file.name);
-    uploadBytes(fileRef, file).then((snapshot) => {
-      console.log(snapshot);
-    });
   }
 }

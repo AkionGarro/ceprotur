@@ -46,7 +46,7 @@ export class CreateServiceComponent implements OnInit {
       this.registerService.createServiceWithUser(formData).subscribe((res) => {
         Swal.fire('Petición creada con exito', 'ID:' + res['Id'], 'success');
         console.log(res);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/created-services']);
       });
     }
   }
